@@ -920,9 +920,8 @@ get_header();
         </section>
 
         <!-- FAQ Section -->
-        <section
-            class="faq relative flex align-center justify-center p-4 mt-20 md:mt-40 min-h-fit bg-ai-faq bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto"
-            id="faq">
+        <section id="faq"
+            class="faq relative flex align-center justify-center p-4 mt-20 md:mt-40 min-h-fit bg-ai-faq bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
             <div class="p-6 md:p-10 w-full md:w-5/6 flex flex-col space-y-8 md:space-y-0 md:flex-row">
                 <div class="flex flex-col space-y-10 items-center md:items-start justify-start w-full md:w-2/5">
                     <!-- Heading Content -->

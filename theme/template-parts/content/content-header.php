@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 
                     <!-- Navigation Links -->
                     <div id="navLinks" class="hidden space-x-6 md:flex mx-auto py-2 px-4 duration-300 ease-in-out">
-                        <a href="<?php echo is_front_page() ? '#' : esc_url( site_url( '/' ) ); ?>"
+                        <a href="<?php echo is_front_page() ? '#home' : esc_url( site_url( '/' ) ); ?>"
                             class="whitespace-nowrap md:text-sm lg:text-base nav-link group relative text-white hover:text-ai-green transition-all duration-300">
                             <?php esc_html_e( 'Home', 'ai_prop' ); ?>
                             <span

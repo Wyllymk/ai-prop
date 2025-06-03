@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				links?.forEach((link) => {
 					if (link.closest('.menu-link')) {
 						// Mobile menu link
-						link.classList.add('bg-aeon-yellow', 'text-white');
+						link.classList.add('bg-ai-green', 'text-white');
 					} else if (link.classList.contains('nav-link')) {
 						// Desktop nav link
 						link.classList.add('text-gray-900');
@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				links?.forEach((link) => {
 					if (link.closest('.menu-link')) {
 						// Mobile menu link
-						link.classList.remove('bg-aeon-yellow', 'text-white');
+						link.classList.remove('bg-ai-green', 'text-white');
 					} else if (link.classList.contains('nav-link')) {
 						// Desktop nav link
 						link.classList.remove('text-gray-900');
