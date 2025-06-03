@@ -3,3 +3,45 @@
  *
  * These will be added immediately before Tailwind’s `base` layer.
  */
+@font-face {
+	font-family: "Manrope";
+	src: url("assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Kode Mono";
+	src: url("assets/fonts/KodeMono-VariableFont_wght.ttf") format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Space Grotesk";
+	src: url("assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
+		format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("assets/fonts/Geist-VariableFont_wght.ttf") format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Creato Display";
+	src: url("assets/fonts/CreatoDisplay-Regular.otf") format("opentype");
+	font-weight: 500;
+	font-style: normal;
+}

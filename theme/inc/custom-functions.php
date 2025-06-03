@@ -39,88 +39,12 @@ function ai_prop_create_home_page() {
     }
 }
 
-/**
- * Create essential pages upon theme activation.
- *
- * This function creates several essential pages
- * for the theme. The function checks if each page already exists based on the slug and
- * if it does not, the page is created and associated with the appropriate template.
- */
-function ai_prop_create_pages() {
-	// Pages to create
-	$pages = array(
-		array(
-			'title'    => 'Payouts',
-			'slug'     => 'payouts',
-			'template' => 'page-templates/page-payouts.php',
-        ),
-        array(
-			'title'    => 'How It Works',
-			'slug'     => 'how-it-works',
-			'template' => 'page-templates/page-how-it-works.php',
-		),
-        array(
-			'title'    => 'Affiliate Programs',
-			'slug'     => 'affiliate-programs',
-			'template' => 'page-templates/page-affiliate-programs.php',
-		),
-		array(
-			'title'    => 'Privacy Policy',
-			'slug'     => 'privacy-policy',
-			'template' => 'page-templates/page-privacy-policy.php',
-		),
-		array(
-			'title'    => 'AML Policy',
-			'slug'     => 'aml-policy',
-			'template' => 'page-templates/page-aml-policy.php',
-		),
-		array(
-			'title'    => 'Terms & Conditions',
-			'slug'     => 'terms-conditions',
-			'template' => 'page-templates/page-terms-conditions.php',
-		),
-		array(
-			'title'    => 'Refund Policy',
-			'slug'     => 'refund-policy',
-			'template' => 'page-templates/page-refund-policy.php',
-		)
-	);
-
-	// Loop through each page and create if it doesn't exist
-	foreach ( $pages as $page ) {
-		$page_exists = get_page_by_path( $page['slug'] );
-
-		if ( ! $page_exists ) {
-			$new_page = array(
-				'post_title'   => $page['title'],
-				'post_content' => '',
-				'post_status'  => 'publish',
-				'post_type'    => 'page',
-				'post_name'    => $page['slug'],
-			);
-
-			$page_id = wp_insert_post( $new_page );
-
-			if ( $page_id && ! is_wp_error( $page_id ) ) {
-				update_post_meta( $page_id, '_wp_page_template', $page['template'] );
-			}
-		}
-	}
-}
-
-add_action( 'after_switch_theme', 'ai_prop_create_pages' );
-
 // Customize the checkout fields
 add_filter( 'woocommerce_checkout_fields', 'ai_prop_checkout_fields' );
 function ai_prop_checkout_fields( $fields ) {
 	// Remove the billing company field
 	unset( $fields['billing']['billing_company'] );
-	unset( $fields['billing']['billing_phone'] );
-	unset( $fields['billing']['billing_address_1'] );
 	unset( $fields['billing']['billing_address_2'] );
-	unset( $fields['billing']['billing_state'] );
-	unset( $fields['billing']['billing_city'] );
-	unset( $fields['billing']['billing_postcode'] );
 	unset( $fields['order']['order_comments'] );
 	unset( $fields['shipping']['shipping_first_name'] );
 	unset( $fields['shipping']['shipping_last_name'] );
@@ -151,3 +75,68 @@ function ai_prop_restrict_cart_to_single_product( $cart_item_data, $product_id )
 
 	return $cart_item_data;
 }
+
+add_action( 'template_redirect', 'check_login_and_redirect' );
+
+function check_login_and_redirect() {
+	if ( ! is_user_logged_in() ) {
+		$current_page = get_current_page_type();
+
+		// List of restricted pages/post types
+		$restricted_pages = array(
+			'shop',
+			'cart',			
+			'product',
+		);
+
+		if ( in_array( $current_page, $restricted_pages ) ) {
+			wp_redirect( home_url( ) );
+			exit;
+		}
+	}
+}
+
+function get_current_page_type() {
+	global $post;
+
+	if ( is_shop() ) {
+		return 'shop';
+	}
+	if ( is_cart() ) {
+		return 'cart';
+	}
+	if ( is_front_page() ) {
+		return 'home';
+	}
+	if ( is_account_page() ) {
+		return 'account';
+	}
+	if ( is_product() ) {
+		return 'product';
+	}
+
+	return '';
+}
+
+add_filter(
+	'woocommerce_add_to_cart_redirect',
+	function ( $url, $adding_to_cart ) {
+		return wc_get_checkout_url();
+	},
+	10,
+	2
+);
+
+add_action(
+	'template_redirect',
+	function () {
+		if ( is_singular( 'product' ) ) {
+			// The external URL to redirect to
+			$external_url = home_url( );
+
+			// Perform the redirect
+			wp_redirect( $external_url );
+			exit;
+		}
+	}
+);

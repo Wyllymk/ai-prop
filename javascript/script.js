@@ -17,39 +17,238 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.Alpine = Alpine;
 
-// Counter animation function
-function initCounters() {
-	const counterElements = document.querySelectorAll('.counter-value');
+Alpine.data('scrollItem', () => ({
+	init() {
+		const scrollInnerWrapper = this.$refs.scrollInnerWrapper;
+		const scrollContainer = this.$refs.scrollContainer;
 
-	counterElements.forEach((element) => {
-		// const targetValue = parseInt(element.textContent.replace(/\D/g, '')); // Extract number (removes $, commas)
-		const isCurrency = element.textContent.includes('$'); // Check if it's currency
+		if (scrollInnerWrapper && scrollContainer) {
+			const originalItems = Array.from(scrollInnerWrapper.children);
 
-		gsap.from(element, {
-			textContent: 0,
-			duration: 3,
-			ease: 'power1.out',
-			snap: { textContent: 1 }, // Ensures whole numbers
-			scrollTrigger: {
-				trigger: element.closest('.w-full'), // Trigger when parent div enters viewport
-				start: 'top 80%',
-				toggleActions: 'play none none none',
-			},
-			onUpdate: function () {
-				// Format number with commas (and $ if currency)
-				const value = Math.floor(this.targets()[0].textContent);
-				element.textContent = isCurrency
-					? `$${value.toLocaleString()}`
-					: value.toLocaleString();
-			},
+			// Clone items two more times (resulting in three copies total)
+			for (let i = 0; i < 1; i++) {
+				originalItems.forEach((item) => {
+					const clonedItem = item.cloneNode(true);
+					scrollInnerWrapper.appendChild(clonedItem);
+				});
+			}
+
+			// Calculate total width and set wrapper width explicitly
+			const totalWidth = scrollInnerWrapper.scrollWidth;
+			scrollInnerWrapper.style.width = `${totalWidth}px`;
+
+			// GSAP animation
+			gsap.to(scrollInnerWrapper, {
+				x: () => `-${totalWidth / 2}px`, // Scroll halfway for one set of clones
+				duration: 60, // Adjust speed
+				ease: 'none',
+				repeat: -1, // Infinite loop
+			});
+		}
+	},
+}));
+
+Alpine.data('scrollChallenge', () => ({
+	init() {
+		const scrollInnerWrapper = this.$refs.scrollInnerWrapper;
+		const scrollContainer = this.$refs.scrollContainer;
+
+		if (scrollInnerWrapper && scrollContainer) {
+			const originalItems = Array.from(scrollInnerWrapper.children);
+
+			// Clone items two more times (resulting in three copies total)
+			for (let i = 0; i < 1; i++) {
+				originalItems.forEach((item) => {
+					const clonedItem = item.cloneNode(true);
+					scrollInnerWrapper.appendChild(clonedItem);
+				});
+			}
+
+			// Calculate total width and set wrapper width explicitly
+			const totalWidth = scrollInnerWrapper.scrollWidth;
+			scrollInnerWrapper.style.width = `${totalWidth}px`;
+
+			// GSAP animation
+			gsap.to(scrollInnerWrapper, {
+				x: () => `-${totalWidth / 2}px`, // Scroll halfway for one set of clones
+				duration: 30, // Adjust speed
+				ease: 'none',
+				repeat: -1, // Infinite loop
+			});
+		}
+	},
+}));
+
+// Checkout JS
+document.addEventListener('DOMContentLoaded', function () {
+	// Elements
+	const couponDiv = document.getElementById('coupon_div');
+	const couponAccepted = document.getElementById('coupon_accepted');
+	const couponDisplay = document.getElementById('coupon_display');
+	const applyCouponButton = document.getElementById('apply_coupon_button');
+	const customCouponCode = document.getElementById('custom_coupon_code');
+	const couponCode = document.getElementById('coupon_code');
+
+	// Clear notices function
+	function clearCouponNotices() {
+		if (couponDisplay) couponDisplay.innerHTML = '';
+	}
+
+	// Reset apply button to default state
+	function resetApplyButton() {
+		if (applyCouponButton) {
+			applyCouponButton.disabled = false;
+			applyCouponButton.textContent = 'Apply Coupon';
+		}
+	}
+
+	// 1. Handle custom coupon form submission
+	if (applyCouponButton) {
+		applyCouponButton.addEventListener('click', function (e) {
+			e.preventDefault();
+			applyCustomCoupon();
+		});
+	}
+
+	// 2. Handle Enter key in coupon input
+	if (customCouponCode) {
+		customCouponCode.addEventListener('keypress', function (e) {
+			if (e.which === 13) {
+				e.preventDefault();
+				applyCustomCoupon();
+			}
+		});
+	}
+
+	// 3. Apply coupon via default WooCommerce form (hidden)
+	function applyCustomCoupon() {
+		var couponCodeValue = customCouponCode.value.trim();
+
+		if (!couponCodeValue) {
+			displayInCustomDiv('Please enter a coupon code', 'error');
+			return;
+		}
+
+		clearCouponNotices();
+
+		// Set the value in the WooCommerce coupon field
+		if (couponCode) couponCode.value = couponCodeValue;
+
+		// Find the actual WooCommerce coupon form
+		var wcCouponForm = document.querySelector('form.checkout_coupon');
+
+		if (wcCouponForm) {
+			// Update button state
+			if (applyCouponButton) {
+				applyCouponButton.disabled = true;
+				applyCouponButton.textContent = 'Applying...';
+			}
+
+			// Create a new submit event
+			var submitEvent = new Event('submit', {
+				bubbles: true,
+				cancelable: true,
+			});
+
+			// Dispatch the event on the WooCommerce form
+			wcCouponForm.dispatchEvent(submitEvent);
+
+			// If the form wasn't prevented from submitting, submit it
+			if (!submitEvent.defaultPrevented) {
+				wcCouponForm.submit();
+			}
+			// Set timeout to reset button after 3 seconds if no response
+			setTimeout(resetApplyButton, 3000);
+		} else {
+			displayInCustomDiv('Could not find coupon form', 'error');
+			resetApplyButton();
+		}
+	}
+
+	// 4. Display messages in your custom div
+	function displayInCustomDiv(message, type) {
+		var alertClass =
+			type === 'error' ? 'woocommerce-error' : 'woocommerce-message';
+		couponDisplay.innerHTML =
+			'<div class="' +
+			alertClass +
+			'" role="alert">' +
+			message +
+			'</div>';
+	}
+
+	// 5. Intercept ALL WooCommerce messages and redirect to your div
+	function interceptWooCommerceMessages() {
+		var messages = document.querySelectorAll(
+			'.woocommerce-message:not(#coupon_display *), .woocommerce-error:not(#coupon_display *), .coupon-error-notice:not(#coupon_display *)'
+		);
+
+		if (messages.length) {
+			messages.forEach(function (msg) {
+				var isCouponErrorNotice = msg.classList.contains(
+					'coupon-error-notice'
+				);
+
+				if (isCouponErrorNotice) {
+					couponDisplay.innerHTML =
+						'<div class="woocommerce-error" role="alert">' +
+						msg.textContent +
+						'</div>';
+					// Reset button when we get a response
+					resetApplyButton();
+				} else {
+					couponDisplay.innerHTML = msg.outerHTML;
+				}
+				msg.remove();
+			});
+		}
+	}
+
+	// 6. Run interceptors on these events:
+	document.body.addEventListener('updated_checkout', handleCouponEvents);
+	document.body.addEventListener('updated_cart_totals', handleCouponEvents);
+	document.body.addEventListener('applied_coupon', handleCouponEvents);
+	document.body.addEventListener('removed_coupon', handleCouponEvents);
+
+	function handleCouponEvents() {
+		interceptWooCommerceMessages();
+		resetApplyButton();
+
+		if (applyCouponButton) {
+			applyCouponButton.disabled = false;
+			applyCouponButton.textContent = 'Apply Coupon';
+		}
+
+		const hasCoupons =
+			document.querySelectorAll('.cart-discount').length > 0;
+		if (hasCoupons) {
+			couponDiv.style.display = 'none';
+			couponAccepted.style.display = 'flex';
+			sessionStorage.setItem('couponApplied', 'true');
+		} else {
+			couponDiv.style.display = 'flex';
+			couponAccepted.style.display = 'none';
+			sessionStorage.setItem('couponApplied', 'false');
+		}
+	}
+
+	// 7. Message check interval
+	setInterval(interceptWooCommerceMessages, 500);
+
+	// 8. MutationObserver for dynamic notices
+	const observer = new MutationObserver(function (mutations) {
+		mutations.forEach(function (mutation) {
+			mutation.addedNodes.forEach(function (node) {
+				if (
+					node.nodeType === 1 &&
+					node.classList.contains('coupon-error-notice')
+				) {
+					interceptWooCommerceMessages();
+				}
+			});
 		});
 	});
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-	Alpine.start();
-	initCounters(); // Initialize counters
+	observer.observe(document.body, { childList: true, subtree: true });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -405,3 +604,404 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 		smoothScrollTo(targetId);
 	});
 });
+
+// State to track the current selected amount and phase
+let amount = '15000'; // Default to $15,000
+
+// Function to update table
+function updateTable(amount) {
+	const tbody = document.getElementById('challenge-body');
+	tbody.innerHTML = ''; // Clear existing content
+
+	tableContent[amount].forEach((row) => {
+		const tr = document.createElement('tr');
+		tr.className = 'text-sm border-b border-white/10';
+		tr.innerHTML = `
+			<td class="px-2 md:px-4 py-2">${row.label}</td>
+			<td class="px-2 md:px-4 py-2 text-center font-geist">${row.phase1}</td>
+			<td class="px-2 md:px-4 py-2 text-center font-geist">${row.phase2}</td>
+			<td class="px-2 md:px-4 py-2 text-center font-geist">${row.funded}</td>
+		`;
+		tbody.appendChild(tr);
+	});
+}
+
+// Function to handle amount button clicks
+function handleAmountClick(amount) {
+	if (tableContent[amount]) {
+		updateTable(amount);
+		updatePrice(amount);
+	} else {
+		console.error('Invalid amount selected:', amount);
+	}
+}
+
+// Function to handle amount button clicks
+function updatePrice(amount) {
+	const priceAmt = document.getElementById('priceAmt');
+	const priceBtn = document.getElementById('priceBtn');
+
+	// Map amounts to prices and links
+	const priceMapping = {
+		1000: {
+			price: '$99.00',
+			link: 'https://betvault.com/checkout/?add-to-cart=22',
+		},
+		5000: {
+			price: '$149.00',
+			link: 'https://betvault.com/checkout/?add-to-cart=23',
+		},
+		10000: {
+			price: '$269.00',
+			link: 'https://betvault.com/checkout/?add-to-cart=24',
+		},
+		15000: {
+			price: '$349.00',
+			link: 'https://betvault.com/checkout/?add-to-cart=25',
+		},
+		25000: {
+			price: '$449.00',
+			link: 'https://betvault.com/checkout/?add-to-cart=26',
+		},
+		50000: {
+			price: '$699.00',
+			link: 'https://betvault.com/checkout/?add-to-cart=27',
+		},
+		75000: {
+			price: '$799.00',
+			link: 'https://betvault.com/checkout/?add-to-cart=28',
+		},
+	};
+
+	// Update price text and button link
+	const selected = priceMapping[amount] || { price: '$0.00', link: '#' }; // Default values
+	priceAmt.textContent = selected.price;
+	priceBtn.setAttribute('href', selected.link); // Update href of the button
+}
+
+// Add event listeners once the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+	// Add event listeners for amount buttons
+	const btn1000 = document.getElementById('btn-10000');
+	const btn5000 = document.getElementById('btn-25000');
+	const btn10000 = document.getElementById('btn-50000');
+	const btn15000 = document.getElementById('btn-100000');
+	const btn25000 = document.getElementById('btn-150000');
+	const btn50000 = document.getElementById('btn-200000');
+
+	if (btn1000)
+		btn1000.addEventListener('click', () => handleAmountClick('1000'));
+	if (btn5000)
+		btn5000.addEventListener('click', () => handleAmountClick('5000'));
+	if (btn10000)
+		btn10000.addEventListener('click', () => handleAmountClick('10000'));
+	if (btn15000)
+		btn15000.addEventListener('click', () => handleAmountClick('15000'));
+	if (btn25000)
+		btn25000.addEventListener('click', () => handleAmountClick('25000'));
+	if (btn50000)
+		btn50000.addEventListener('click', () => handleAmountClick('50000'));
+
+	// Initial table load
+	updateTable(amount);
+});
+
+// Content for each button
+const tableContent = {
+	1000: [
+		{
+			label: 'Profit Target',
+			phase1: '8%',
+			phase2: '8%',
+			funded: '8%',
+		},
+		{
+			label: 'Minimum Trading Days',
+			phase1: '0',
+			phase2: '0',
+			funded: '0',
+		},
+		{
+			label: 'Daily Drawdown',
+			phase1: '4%',
+			phase2: '4%',
+			funded: '4%',
+		},
+		{
+			label: 'Maximum Drawdown',
+			phase1: '10%',
+			phase2: '10%',
+			funded: '10%',
+		},
+		{
+			label: 'Trading Period',
+			phase1: '10%',
+			phase2: 'N/A',
+			funded: 'N/A',
+		},
+	],
+	5000: [
+		{
+			label: 'Profit Target',
+			phase1: '$1,500',
+			phase2: '$1,000',
+			funded: '$1,000',
+		},
+		{
+			label: 'Minimum Pick Amount',
+			phase1: '$250',
+			phase2: '$250',
+			funded: '$250',
+		},
+		{
+			label: 'Minimum Picks',
+			phase1: '20',
+			phase2: '20',
+			funded: '20',
+		},
+		{
+			label: 'Maximum Pick Amount',
+			phase1: '$500',
+			phase2: '$500',
+			funded: '$500',
+		},
+		{
+			label: 'Max Loss',
+			phase1: '$1,500',
+			phase2: '$1,500',
+			funded: '$1,500',
+		},
+		{
+			label: 'Daily Drawdown',
+			phase1: '$750',
+			phase2: '$750',
+			funded: '$750',
+		},
+		{
+			label: 'Time Limit',
+			phase1: '20 days',
+			phase2: '20 days',
+			funded: '20 days',
+		},
+	],
+	10000: [
+		{
+			label: 'Profit Target',
+			phase1: '$3,000',
+			phase2: '$2,000',
+			funded: '$2,000',
+		},
+		{
+			label: 'Minimum Pick Amount',
+			phase1: '$500',
+			phase2: '$500',
+			funded: '$500',
+		},
+		{
+			label: 'Minimum Picks',
+			phase1: '20',
+			phase2: '20',
+			funded: '20',
+		},
+		{
+			label: 'Maximum Pick Amount',
+			phase1: '$1,000',
+			phase2: '$1,000',
+			funded: '$1,000',
+		},
+		{
+			label: 'Max Loss',
+			phase1: '$3,000',
+			phase2: '$3,000',
+			funded: '$3,000',
+		},
+		{
+			label: 'Daily Drawdown',
+			phase1: '$1,500',
+			phase2: '$1,500',
+			funded: '$1,500',
+		},
+		{
+			label: 'Time Limit',
+			phase1: '20 days',
+			phase2: '20 days',
+			funded: '20 days',
+		},
+	],
+	15000: [
+		{
+			label: 'Profit Target',
+			phase1: '$4,500',
+			phase2: '$3,000',
+			funded: '$3,000',
+		},
+		{
+			label: 'Minimum Pick Amount',
+			phase1: '$750',
+			phase2: '$750',
+			funded: '$750',
+		},
+		{
+			label: 'Minimum Picks',
+			phase1: '20',
+			phase2: '20',
+			funded: '20',
+		},
+		{
+			label: 'Maximum Pick Amount',
+			phase1: '$1,500',
+			phase2: '$1,500',
+			funded: '$1,500',
+		},
+		{
+			label: 'Max Loss',
+			phase1: '$4,500',
+			phase2: '$4,500',
+			funded: '$4,500',
+		},
+		{
+			label: 'Daily Drawdown',
+			phase1: '$2,250',
+			phase2: '$2,250',
+			funded: '$2,250',
+		},
+		{
+			label: 'Time Limit',
+			phase1: '20 days',
+			phase2: '20 days',
+			funded: '20 days',
+		},
+	],
+	25000: [
+		{
+			label: 'Profit Target',
+			phase1: '$7,500',
+			phase2: '$5,000',
+			funded: '$5,000',
+		},
+		{
+			label: 'Minimum Pick Amount',
+			phase1: '$1,250',
+			phase2: '$1,250',
+			funded: '$1,250',
+		},
+		{
+			label: 'Minimum Picks',
+			phase1: '20',
+			phase2: '20',
+			funded: '20',
+		},
+		{
+			label: 'Maximum Pick Amount',
+			phase1: '$2,500',
+			phase2: '$2,500',
+			funded: '$2,500',
+		},
+		{
+			label: 'Max Loss',
+			phase1: '$7,500',
+			phase2: '$7,500',
+			funded: '$7,500',
+		},
+		{
+			label: 'Daily Drawdown',
+			phase1: '$3,750',
+			phase2: '$3,750',
+			funded: '$3,750',
+		},
+		{
+			label: 'Time Limit',
+			phase1: '20 days',
+			phase2: '20 days',
+			funded: '20 days',
+		},
+	],
+	50000: [
+		{
+			label: 'Profit Target',
+			phase1: '$12,500',
+			phase2: '$10,000',
+			funded: '$10,000',
+		},
+		{
+			label: 'Minimum Pick Amount',
+			phase1: '$2,500',
+			phase2: '$2,500',
+			funded: '$2,500',
+		},
+		{
+			label: 'Minimum Picks',
+			phase1: '20',
+			phase2: '20',
+			funded: '20',
+		},
+		{
+			label: 'Maximum Pick Amount',
+			phase1: '$5,000',
+			phase2: '$5,000',
+			funded: '$5,000',
+		},
+		{
+			label: 'Max Loss',
+			phase1: '$15,000',
+			phase2: '$15,000',
+			funded: '$15,000',
+		},
+		{
+			label: 'Daily Drawdown',
+			phase1: '$7,500',
+			phase2: '$7,500',
+			funded: '$7,500',
+		},
+		{
+			label: 'Time Limit',
+			phase1: '20 days',
+			phase2: '20 days',
+			funded: '20 days',
+		},
+	],
+	75000: [
+		{
+			label: 'Profit Target',
+			phase1: '$22,500',
+			phase2: '$15,000',
+			funded: '$15,000',
+		},
+		{
+			label: 'Minimum Pick Amount',
+			phase1: '$3,750',
+			phase2: '$3,750',
+			funded: '$3,750',
+		},
+		{
+			label: 'Minimum Picks',
+			phase1: '20',
+			phase2: '20',
+			funded: '20',
+		},
+		{
+			label: 'Maximum Pick Amount',
+			phase1: '$7,500',
+			phase2: '$7,500',
+			funded: '$7,500',
+		},
+		{
+			label: 'Max Loss',
+			phase1: '$22,500',
+			phase2: '$22,500',
+			funded: '$22,500',
+		},
+		{
+			label: 'Daily Drawdown',
+			phase1: '$11,250',
+			phase2: '$11,250',
+			funded: '$11,250',
+		},
+		{
+			label: 'Time Limit',
+			phase1: '20 days',
+			phase2: '20 days',
+			funded: '20 days',
+		},
+	],
+};
