@@ -861,19 +861,20 @@ get_header();
                             class="object-cover w-full h-auto">
                     </div>
                     <!-- Body -->
-                    <div class="space-y-2 flex justify-end flex-col z-20 p-3 md:p-6">
-                        <h4 class="text-base font-manrope">
+                    <div class="mt-20 space-y-2 flex justify-end flex-col z-20 p-3 md:p-6">
+                        <h4 class="text-lg font-bold font-manrope text-center">
                             <?php esc_html_e( 'Stay Updated with our latest news', 'ai_prop' ); ?>
                         </h4>
+                        <div class="bg-[#062c3e] p-1.5 rounded-md flex items-center w-[500px] max-w-full z-20">
+                            <input type="email" placeholder="Enter your email"
+                                class="bg-transparent text-white placeholder-white px-4 py-2 outline-none flex-1" />
+                            <button
+                                class="bg-gradient-to-r from-green-400 to-teal-500 text-white font-medium px-6 py-2 rounded-md hover:from-green-300 hover:to-teal-400 transition">
+                                <?php esc_html_e( 'Join Now', 'ai_prop' ); ?>
+                            </button>
+                        </div>
                     </div>
-                    <div class="bg-[#062c3e] p-1.5 rounded-md flex items-center w-[500px] max-w-full z-20">
-                        <input type="email" placeholder="Enter your email"
-                            class="bg-transparent text-white placeholder-white px-4 py-2 outline-none flex-1" />
-                        <button
-                            class="bg-gradient-to-r from-green-400 to-teal-500 text-white font-medium px-6 py-2 rounded-md hover:from-green-300 hover:to-teal-400 transition">
-                            Join Now
-                        </button>
-                    </div>
+
 
                 </div>
 
@@ -882,26 +883,39 @@ get_header();
                     class="my-4 w-px h-100 mx-auto flex self-center bg-gradient-to-b from-transparent via-ai-green to-transparent">
                 </div>
 
-                <div class="flex flex-col items-center justify-center h-140 w-full md:w-1/2">
-                    <div class="w-full relative flex justify-center h-60 overflow-hidden">
-                        <!-- Top Image -->
-                        <div class="absolute top-0 w-full z-10">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/community.png"
-                                alt="community" class="object-cover w-full h-auto">
+                <div class="relative flex items-center justify-center overflow-hidden flex-col h-140 w-full md:w-1/2">
+                    <!-- Top Image -->
+                    <div class="absolute top-10 w-9/10 z-10">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/community.png" alt="community"
+                            class="object-cover w-full h-auto">
+                        <!-- Bottom inner shadow -->
+                        <div
+                            class="absolute inset-x-0 bottom-0 h-5 bg-[linear-gradient(to_top,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
                         </div>
-                        <!-- Body -->
-                        <div class="space-y-2 flex justify-end flex-col z-20 p-3 md:p-6">
-                            <h4 class="text-base font-manrope">
-                                <?php esc_html_e( 'Be part of the Community', 'ai_prop' ); ?>
-                            </h4>
-                            <a href="<?php echo is_front_page() ? '#' : esc_url( site_url( '/' ) ) . '#'; ?>"
-                                class="text-center whitespace-nowrap text-lg rounded-lg bg-blue-900 px-4 py-2 hover:drop-shadow-ai-green transition duration-300 ease-in-out">
-                                <?php esc_html_e( 'Join Discord', 'ai_prop' ); ?>
-                            </a>
+                        <!-- Top inner shadow -->
+                        <div
+                            class="absolute inset-x-0 top-0 h-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
+                        </div>
+                        <!-- Left inner shadow -->
+                        <div
+                            class="absolute inset-y-0 left-0 h-full w-10 bg-[linear-gradient(to_right,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
+                        </div>
+                        <!-- Right inner shadow -->
+                        <div
+                            class="absolute inset-y-0 right-0 h-full w-5 bg-[linear-gradient(to_left,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
                         </div>
                     </div>
+                    <!-- Body -->
+                    <div class="mt-20 space-y-2 flex justify-end flex-col z-20 p-3 md:p-6">
+                        <h4 class="text-lg font-bold font-manrope">
+                            <?php esc_html_e( 'Be part of the Community', 'ai_prop' ); ?>
+                        </h4>
+                        <a href="<?php echo is_front_page() ? '#' : esc_url( site_url( '/' ) ) . '#'; ?>"
+                            class="text-center whitespace-nowrap text-lg rounded-lg bg-blue-900 px-4 py-2 hover:drop-shadow-ai-green transition duration-300 ease-in-out">
+                            <?php esc_html_e( 'Join Discord', 'ai_prop' ); ?>
+                        </a>
+                    </div>
                 </div>
-
             </div>
         </section>
 
