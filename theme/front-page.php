@@ -390,7 +390,7 @@ get_header();
 
             <div class="w-full md:w-2/3 flex flex-col items-center justify-between space-y-10">
                 <div
-                    class="h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-6">
+                    class="plan-item h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-6">
                     <h4 class="text-xl font-manrope text-white/80">
                         <?php esc_html_e( 'Select a Challenge', 'ai_prop' ); ?>
                     </h4>
@@ -492,7 +492,7 @@ get_header();
                     </div>
                 </div>
                 <div
-                    class="relative h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg overflow-hidden">
+                    class="plan-item relative h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg overflow-hidden">
                     <!-- Challenge Section -->
                     <div class="flex items-center justify-center h-fit p-3 md:p-6 w-fit md:w-full z-20">
                         <table id="challenge-table" class="table-auto border-collapse overflow-hidden w-fit md:w-full">
@@ -598,7 +598,7 @@ get_header();
                     </div>
                 </div>
                 <div
-                    class="h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-6">
+                    class="plan-item h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-6">
                     <!-- Payment Section -->
                     <div class="w-full flex flex-col items-center justify-center space-y-5">
                         <div class="flex items-end justify-start w-full space-x-3">
@@ -636,10 +636,10 @@ get_header();
             </div>
             <!-- Body -->
             <div class="w-full flex flex-col items-center justify-between space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 lg:mt-10 w-full max-w-5xl">
+                <div class="custom-section-1 grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 lg:mt-10 w-full max-w-5xl">
                     <!-- 1 -->
                     <div
-                        class="evaluation-left relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                        class="feature-left relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
                         <!-- Top Image -->
                         <div class="absolute top-3 left-3 z-20">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/capital.png" alt="capital"
@@ -668,10 +668,10 @@ get_header();
                         </div>
                     </div>
                     <!-- 2 -->
-                    <div class="evaluation-right grid grid-rows-2 gap-6">
+                    <div class="grid grid-rows-2 gap-6">
                         <!-- 2 -->
                         <div
-                            class="relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                            class="feature-middle-top relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
                             <!-- Top Image -->
                             <div class="absolute top-0 w-full z-10">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top-3.png" alt="top"
@@ -691,7 +691,7 @@ get_header();
                         </div>
                         <!-- 3 -->
                         <div
-                            class="relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                            class="feature-middle-bottom relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
                             <!-- Top Image -->
                             <div class="absolute top-0 w-full z-10">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top-4.png" alt="top"
@@ -712,7 +712,7 @@ get_header();
                     </div>
                     <!-- 3 -->
                     <div
-                        class="evaluation-left relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                        class="feature-right relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
                         <!-- Top Image -->
                         <div class="absolute top-3 left-3 z-20">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/radio.png" alt="radio"
@@ -741,10 +741,10 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+                <div class="custom-section-2 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
                     <!-- 1 -->
                     <div
-                        class="evaluation-left relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                        class="feature-left relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
                         <!-- Top Image -->
                         <div class="absolute top-3 left-3 z-20">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/zap.png" alt="zap"
@@ -773,10 +773,10 @@ get_header();
                         </div>
                     </div>
                     <!-- 2 -->
-                    <div class="evaluation-right grid grid-rows-2 gap-6">
+                    <div class="grid grid-rows-2 gap-6">
                         <!-- 2 -->
                         <div
-                            class="relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                            class="feature-middle-top relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
                             <!-- Top Image -->
                             <div class="absolute top-0 w-full z-10">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top-5.png" alt="top"
@@ -796,7 +796,7 @@ get_header();
                         </div>
                         <!-- 3 -->
                         <div
-                            class="relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                            class="feature-middle-bottom relative flex justify-center h-45 rounded-xl bg-ai-blue border border-ai-blue-2 overflow-hidden">
                             <!-- Top Image -->
                             <div class="absolute top-0 w-full z-10">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top-6.png" alt="top"
@@ -817,7 +817,7 @@ get_header();
                     </div>
                     <!-- 3 -->
                     <div
-                        class="evaluation-left relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                        class="feature-right relative flex flex-col justify-between h-100 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
                         <!-- Top Image -->
                         <div class="absolute top-3 left-3 z-20">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/database.png"
@@ -952,7 +952,7 @@ get_header();
                     class="flex flex-col items-start space-y-4 w-full md:w-3/5 bg-ai-blue p-2 rounded-lg border border-ai-blue/10 overflow-hidden">
                     <!-- FAQ 1 -->
                     <div x-data="{ open: false }"
-                        class="w-full rounded-lg hover:shadow-lg bg-ai-blue-2 shadow-[#051924] border border-ai-blue-2/20 overflow-hidden">
+                        class="card w-full rounded-lg hover:shadow-lg bg-ai-blue-2 shadow-[#051924] border border-ai-blue-2/20 overflow-hidden">
                         <div @click="open = !open"
                             class="flex justify-between items-center w-full cursor-pointer px-4 py-3 rounded-md">
                             <h3 class="text-lg font-medium font-creato-display">
@@ -1053,7 +1053,7 @@ get_header();
             <div
                 class="max-w-sm md:max-w-3xl lg:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6 lg:mt-10 w-full">
                 <!-- Card 1 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1090,7 +1090,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1107,7 +1107,7 @@ get_header();
                     </div>
                     <div class="relative w-full p-1 rounded-md flex justify-center items-center">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/placeholder.png" alt="user"
-                            class="">
+                            class="image">
                         <!-- Gradient border (top only) -->
                         <div
                             class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-ai-green via-transparent to-ai-green">
@@ -1127,7 +1127,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1164,7 +1164,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1201,7 +1201,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 5 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1238,7 +1238,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 6 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1275,7 +1275,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 7 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1312,7 +1312,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 8 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1349,7 +1349,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 9 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1386,7 +1386,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 10 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1423,7 +1423,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 11 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>
@@ -1460,7 +1460,7 @@ get_header();
                     </div>
                 </div>
                 <!-- Card 12 -->
-                <div class="w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
+                <div class="user-item w-full flex bg-ai-dark-green h-fit rounded-lg p-2 justify-between space-x-3">
                     <div class="w-full flex flex-col justify-between">
                         <div class="flex px-2 py-1 space-x-2 justify-between bg-ai-blue-3 rounded-sm">
                             <div>

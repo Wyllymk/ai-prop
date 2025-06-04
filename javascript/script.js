@@ -253,17 +253,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', () => {
 	const plans = document.querySelectorAll('.plan-item'); // Select all plans
-	const works = document.querySelectorAll('.work-item'); // Select all works
-	const benefits = document.querySelectorAll('.benefit-item'); // Select all benefits
-	const reviews = document.querySelectorAll('.review-item'); // Select all reviews
+	const users = document.querySelectorAll('.user-item'); // Select all users
 	const hero = document.querySelector('.hero'); // Select the hero section
-	const sports = document.querySelector('.sports'); // Select the sports section
 	const evaluationLeft = document.querySelector('.evaluation-left'); // Select the evaluation left section
 	const evaluationRight = document.querySelector('.evaluation-right'); // Select the evaluation right section
-	const secureLeft = document.querySelector('.secure-left'); // Select the secure left section
-	const secureRight = document.querySelector('.secure-right'); // Select the secure right section
 	const faq = document.querySelector('.faq'); // Select the faq section
-	const image = document.querySelector('.image'); // Select the faq section
+	const image = document.querySelector('.image'); // Select the image section
 	const rows = document.querySelectorAll('.row-animate');
 
 	rows.forEach((row) => {
@@ -301,57 +296,93 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	// Animation for plans
-	gsap.from(plans, {
-		opacity: 0,
-		y: 50, // Move up from 50px
-		duration: 1,
-		stagger: 0.4, // Delay between animations
-		ease: 'power3.out',
-		scrollTrigger: {
-			trigger: plans[0], // Trigger animation when the first plan appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
+	function animateFeatureSectionSequential(sectionClass) {
+		const section = document.querySelector(sectionClass);
+		if (!section) return;
+
+		const cards = [
+			section.querySelector('.feature-left'),
+			section.querySelector('.feature-middle-top'),
+			section.querySelector('.feature-middle-bottom'),
+			section.querySelector('.feature-right'),
+		].filter(Boolean);
+
+		// Set initial state
+		gsap.set(cards, { opacity: 0, y: 40 });
+
+		// Create timeline for sequential animation
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: section,
+				start: 'top 75%',
+				end: 'top 25%',
+				toggleActions: 'play none none none',
+				// markers: true
+			},
+		});
+
+		// Add cards to timeline with slight overlap
+		tl.to(cards[0], { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' })
+			.to(
+				cards[1],
+				{ opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+				'-=0.2'
+			)
+			.to(
+				cards[2],
+				{ opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+				'-=0.2'
+			)
+			.to(
+				cards[3],
+				{ opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+				'-=0.2'
+			);
+	}
+
+	animateFeatureSectionSequential('.custom-section-1');
+	animateFeatureSectionSequential('.custom-section-2');
+
+	plans.forEach((plan, index) => {
+		// Set different delays based on position for a wave effect
+		const delay = index * 0.15;
+
+		gsap.from(plan, {
+			opacity: 0,
+			y: 50,
+			duration: 0.8,
+			ease: 'power3.out',
+			scrollTrigger: {
+				trigger: plan,
+				start: 'top 75%', // More visible trigger point
+				end: 'top 40%',
+				toggleActions: 'play none none none',
+			},
+			delay: delay, // Small delay between items
+		});
+
+		// Bonus: Add a subtle scale effect
+		gsap.from(plan, {
+			scale: 0.95,
+			duration: 0.8,
+			ease: 'power2.out',
+			scrollTrigger: {
+				trigger: plan,
+				start: 'top 75%',
+				toggleActions: 'play none none none',
+			},
+			delay: delay,
+		});
 	});
 
-	// Animation for works
-	gsap.from(works, {
+	gsap.from(users, {
 		opacity: 0,
 		y: 50, // Move up from 50px
 		duration: 1,
-		stagger: 0.4, // Delay between animations
+		stagger: 0.3, // Delay between animations
 		ease: 'power3.out',
 		scrollTrigger: {
-			trigger: works[0], // Trigger animation when the first work appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
-	});
-
-	// Animation for benefits
-	gsap.from(benefits, {
-		opacity: 0,
-		y: 50, // Move up from 50px
-		duration: 1,
-		stagger: 0.4, // Delay between animations
-		ease: 'power3.out',
-		scrollTrigger: {
-			trigger: benefits[0], // Trigger animation when the first benefit appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
-	});
-
-	// Animation for benefits
-	gsap.from(reviews, {
-		opacity: 0,
-		y: 50, // Move up from 50px
-		duration: 1,
-		stagger: 0.4, // Delay between animations
-		ease: 'power3.out',
-		scrollTrigger: {
-			trigger: reviews[0], // Trigger animation when the first review appears
+			trigger: users[0], // Trigger animation when the first plan appears
 			start: 'top 80%', // Start when 80% of the section is in view
 			toggleActions: 'play none none none',
 		},
@@ -362,19 +393,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		opacity: 0, // Fade in from transparent
 		duration: 2, // Animation duration of 2 seconds
 		ease: 'power3.out', // Smooth easing
-	});
-
-	// Animation for sports
-	gsap.from(sports, {
-		opacity: 0, // Fade in from transparent
-		y: 50, // Move up from 50px
-		duration: 2, // Animation duration of 2 seconds
-		ease: 'power3.out', // Smooth easing
-		scrollTrigger: {
-			trigger: sports, // Trigger animation when the sports section appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
 	});
 
 	// Animation for evaluationRight
@@ -403,32 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	});
 
-	// Animation for secureRight
-	gsap.from(secureRight, {
-		opacity: 0, // Fade in from transparent
-		x: 50, // Move in from 50px to the right
-		duration: 2, // Animation duration of 2 seconds
-		ease: 'power3.out', // Smooth easing
-		scrollTrigger: {
-			trigger: secureRight, // Trigger animation when the secureRight section appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
-	});
-
-	// Animation for secureLeft
-	gsap.from(secureLeft, {
-		opacity: 0, // Fade in from transparent
-		x: -50, // Move in from 50px to the left
-		duration: 2, // Animation duration of 2 seconds
-		ease: 'power3.out', // Smooth easing
-		scrollTrigger: {
-			trigger: secureLeft, // Trigger animation when the secureLeft section appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
-	});
-
 	gsap.from(faq, {
 		rotationX: 90, // Flip on the X-axis
 		opacity: 0,
@@ -446,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		duration: 2,
 		ease: 'power2.out',
 		scrollTrigger: {
-			trigger: '.image',
+			trigger: image,
 			start: 'top 80%',
 			toggleActions: 'play none none none',
 		},
