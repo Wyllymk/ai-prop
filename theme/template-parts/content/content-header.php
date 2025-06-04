@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 
                     <div class="flex items-center">
                         <a href="http://dashboard.aiprop.com/"
-                            class="whitespace-nowrap mr-4 text-xs md:hidden rounded-full border border-ai-green bg-ai-green px-4 py-1 text-white hover:drop-shadow-ai-green transition duration-300 ease-in-out">
+                            class="whitespace-nowrap mr-4 text-xs md:hidden rounded-md bg-gradient-to-r from-ai-green to-blue-900 px-4 py-1 text-white hover:drop-shadow-ai-green transition duration-300 ease-in-out">
                             <?php esc_html_e( 'Get Funded Now', 'ai_prop' ); ?>
                         </a>
                         <button id="menuButton" class="md:hidden">

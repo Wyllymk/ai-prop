@@ -35,7 +35,7 @@ get_header();
 
         <!-- Hero Section -->
         <section id="home"
-            class="hero h-200 lg:h-250 xl:h-280 2xl:h-300 -mt-16 mb-5 md:mb-10 w-full relative flex flex-col flex-nowrap align-center justify-between z-10 p-4 md:p-0 md:min-h-screen bg-hero bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
+            class="hero h-200 lg:h-250 xl:h-280 2xl:h-300 -mt-16 mb-5 md:mb-10 w-full relative flex flex-col flex-nowrap align-center justify-between z-10 px-4 md:p-0 md:min-h-screen bg-hero bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
             <div
                 class="z-22 md:p-8 mt-30 lg:mt-20 flex flex-col items-center justify-center space-y-4 xl:space-y-4 text-center text-white">
                 <!-- Hero Content -->
@@ -208,11 +208,11 @@ get_header();
         <!-- How it works Section -->
         <section
             class="w-full mx-auto max-w-5xl flex flex-col flex-nowrap align-center justify-center p-4 bg-ai-bg bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
-            <h5 class="text-start text-ai-green text-sm md:text-base mb-10">
+            <h5 class="text-center md:text-start text-ai-green text-sm md:text-base mb-10">
                 <?php esc_html_e( 'HOW IT WORKS', 'ai_prop' ); ?>
             </h5>
             <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-5">
-                <h2 class="text-3xl font-bold leading-tight md:text-4xl font-manrope">
+                <h2 class="text-center md:text-start text-3xl font-bold leading-tight md:text-4xl font-manrope">
                     <?php esc_html_e( 'Becoming a AI Prop', 'ai_prop' ); ?><br>
                     <?php esc_html_e( 'Funded Trader', 'ai_prop' ); ?>
                 </h2>
@@ -225,7 +225,7 @@ get_header();
                     </a>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 lg:mt-10 w-full max-w-5xl">
+            <div class="evaluation-container grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 lg:mt-10 w-full max-w-5xl">
                 <!-- 1 -->
                 <div
                     class="evaluation-left relative flex flex-col justify-between h-100 md:h-150 rounded-xl space-y-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
@@ -302,10 +302,10 @@ get_header();
                             class="w-full h-auto object-cover">
                     </div>
                 </div>
-                <div class="evaluation-right grid grid-rows-2 gap-6">
+                <div class="grid grid-rows-2 gap-6">
                     <!-- 2 -->
                     <div
-                        class="relative flex justify-start h-70 rounded-xl space-x-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                        class="evaluation-right relative flex justify-start h-70 rounded-xl space-x-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
                         <!-- Top Image -->
                         <div class="absolute -top-15 w-full z-10">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top.png" alt="top"
@@ -339,7 +339,7 @@ get_header();
                     </div>
                     <!-- 3 -->
                     <div
-                        class="relative flex justify-start h-70 rounded-xl space-x-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
+                        class="evaluation-right relative flex justify-start h-70 rounded-xl space-x-4 bg-ai-blue border border-ai-blue-2 overflow-hidden">
                         <!-- Top Image -->
                         <div class="absolute -top-10 w-full z-10">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top.png" alt="top"
@@ -375,12 +375,12 @@ get_header();
         <!-- Pricing Section -->
         <section id="pricing"
             class="w-full mx-auto max-w-7xl my-20 md:my-40 flex flex-col md:flex-row space-y-5 md:space-y-0 align-center justify-center p-4 bg-ai-bg bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
-            <div class="flex flex-col items-start justify-start space-y-4 w-full md:w-1/3">
-                <h5 class="text-start text-ai-green text-sm md:text-base mb-10">
+            <div class="flex flex-col items-center md:items-start justify-start space-y-4 w-full md:w-1/3">
+                <h5 class="text-center md:text-start text-ai-green text-sm md:text-base mb-10">
                     <?php esc_html_e( 'OUR PRICING PLAN', 'ai_prop' ); ?>
                 </h5>
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-5">
-                    <h2 class="text-3xl font-bold leading-tight md:text-4xl font-manrope">
+                    <h2 class="text-center md:text-start text-3xl font-bold leading-tight md:text-4xl font-manrope">
                         <?php esc_html_e( 'Start Your Path to', 'ai_prop' ); ?><br>
                         <?php esc_html_e( 'Becoming a Funded', 'ai_prop' ); ?><br>
                         <?php esc_html_e( 'Trader', 'ai_prop' ); ?>
@@ -498,22 +498,22 @@ get_header();
                         <table id="challenge-table" class="table-auto border-collapse overflow-hidden w-fit md:w-full">
                             <thead class="text-right">
                                 <tr class="text-left text-sm font-semibold border-b border-white/10">
-                                    <th class="px-2 md:px-4 py-1 bg-transparent"></th>
-                                    <th class="px-2 md:px-4 py-1">
+                                    <th class="px-2 md:px-4 py-2 bg-transparent"></th>
+                                    <th class="px-2 md:px-4 py-2">
                                         <h5
                                             class="text-center font-geist text-base font-medium leading-[14px] bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent whitespace-nowrap">
                                             <?php esc_html_e( 'Phase 1', 'ai_prop' ); ?>
                                         </h5>
                                     </th>
 
-                                    <th class="px-2 md:px-4 py-1">
+                                    <th class="px-2 md:px-4 py-2">
                                         <h5
                                             class="text-center font-geist text-base font-medium leading-[14px] bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent whitespace-nowrap">
                                             <?php esc_html_e( 'Phase 2', 'ai_prop' ); ?>
                                         </h5>
                                     </th>
 
-                                    <th class="px-2 md:px-4 py-1">
+                                    <th class="px-2 md:px-4 py-2">
                                         <h5
                                             class="text-center font-geist text-base font-medium leading-[14px] bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent whitespace-nowrap">
                                             <?php esc_html_e( 'Funded', 'ai_prop' ); ?>
@@ -854,7 +854,8 @@ get_header();
             <div
                 class="w-full mx-auto max-w-6xl flex flex-col md:flex-row space-y-5 md:space-y-0 align-center justify-center">
 
-                <div class="relative flex flex-col items-center justify-center h-140 overflow-hidden w-full md:w-1/2">
+                <div
+                    class="relative flex flex-col items-center justify-center h-100 md:h-140 overflow-hidden w-full md:w-1/2">
                     <!-- Top Image -->
                     <div class="absolute top-0 w-full z-10">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/stars.png" alt="stars"
@@ -865,11 +866,11 @@ get_header();
                         <h4 class="text-lg font-bold font-manrope text-center">
                             <?php esc_html_e( 'Stay Updated with our latest news', 'ai_prop' ); ?>
                         </h4>
-                        <div class="bg-[#062c3e] p-1.5 rounded-md flex items-center w-[500px] max-w-full z-20">
+                        <div class="bg-[#062c3e] p-1.5 rounded-md flex items-center w-full">
                             <input type="email" placeholder="Enter your email"
                                 class="bg-transparent text-white placeholder-white px-4 py-2 outline-none flex-1" />
                             <button
-                                class="bg-gradient-to-r from-green-400 to-teal-500 text-white font-medium px-6 py-2 rounded-md hover:from-green-300 hover:to-teal-400 transition">
+                                class="whitespace-nowrap bg-gradient-to-r from-ai-green to-blue-900 text-white font-medium px-6 py-2 rounded-md hover:drop-shadow-ai-green transition">
                                 <?php esc_html_e( 'Join Now', 'ai_prop' ); ?>
                             </button>
                         </div>
@@ -880,10 +881,15 @@ get_header();
 
                 <!-- Horizontal Divider -->
                 <div
-                    class="my-4 w-px h-100 mx-auto flex self-center bg-gradient-to-b from-transparent via-ai-green to-transparent">
+                    class="hidden my-4 w-px h-100 mx-auto md:flex self-center bg-gradient-to-b from-transparent via-ai-green to-transparent">
+                </div>
+                <!-- Horizontal Divider -->
+                <div
+                    class="my-4 w-11/12 mx-auto flex md:hidden h-px self-center bg-gradient-to-r from-transparent via-ai-green to-transparent">
                 </div>
 
-                <div class="relative flex items-center justify-center overflow-hidden flex-col h-140 w-full md:w-1/2">
+                <div
+                    class="relative flex items-center justify-center overflow-hidden flex-col h-100 md:h-140 w-full md:w-1/2">
                     <!-- Top Image -->
                     <div class="absolute top-10 w-9/10 z-10">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/community.png" alt="community"
@@ -921,7 +927,7 @@ get_header();
 
         <!-- FAQ Section -->
         <section id="faq"
-            class="faq relative flex align-center justify-center p-4 mt-20 md:mt-40 min-h-fit bg-ai-faq bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
+            class="faq relative flex align-center justify-center p-4 min-h-fit bg-ai-faq bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
             <div class="p-6 md:p-10 w-full md:w-5/6 flex flex-col space-y-8 md:space-y-0 md:flex-row">
                 <div class="flex flex-col space-y-10 items-center md:items-start justify-start w-full md:w-2/5">
                     <!-- Heading Content -->

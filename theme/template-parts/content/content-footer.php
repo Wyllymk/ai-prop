@@ -33,13 +33,16 @@ defined( 'ABSPATH' ) || exit;
                 <h6 class="text-white">
                     <?php esc_html_e( 'Platform', 'ai_prop' ); ?>
                 </h6>
-                <a href="#" class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform">
+                <a href="<?php echo is_front_page() ? '#home' : esc_url( site_url( '/' ) ); ?>"
+                    class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'Home', 'ai_prop' ); ?>
                 </a>
-                <a href="#" class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform">
+                <a <?php echo is_front_page() ? '#pricing' : esc_url( site_url( '/' ) ) . '#pricing'; ?>
+                    class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'Pricing', 'ai_prop' ); ?>
                 </a>
-                <a href="#" class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform">
+                <a <?php echo is_front_page() ? '#faq' : esc_url( site_url( '/' ) ) . '#faq'; ?>
+                    class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'FAQs', 'ai_prop' ); ?>
                 </a>
 
@@ -48,13 +51,16 @@ defined( 'ABSPATH' ) || exit;
                 <h6 class="text-white">
                     <?php esc_html_e( 'Join the Community', 'ai_prop' ); ?>
                 </h6>
-                <a href="#" class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform">
+                <a href="#"
+                    class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'X / Twitter', 'ai_prop' ); ?>
                 </a>
-                <a href="#" class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform">
+                <a href="#"
+                    class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'Instagram', 'ai_prop' ); ?>
                 </a>
-                <a href="#" class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform">
+                <a href="#"
+                    class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'Discord', 'ai_prop' ); ?>
                 </a>
             </div>

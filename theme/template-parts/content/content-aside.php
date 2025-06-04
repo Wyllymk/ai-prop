@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
                 </li>
                 <!-- Dashboard Link -->
                 <li class="rounded-lg">
-                    <a href="<?php echo esc_url( site_url( '/' ) ); ?>"
+                    <a href="<?php echo is_front_page() ? '#home' : esc_url( site_url( '/' ) ); ?>"
                         class="menu-link flex items-center rounded-lg p-2 hover:bg-gray-600 hover:text-ai-green">
                         <span class="ml-4"><?php esc_html_e( 'Home', 'ai' ); ?></span>
                     </a>

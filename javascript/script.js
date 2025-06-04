@@ -255,8 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const plans = document.querySelectorAll('.plan-item'); // Select all plans
 	const users = document.querySelectorAll('.user-item'); // Select all users
 	const hero = document.querySelector('.hero'); // Select the hero section
-	const evaluationLeft = document.querySelector('.evaluation-left'); // Select the evaluation left section
-	const evaluationRight = document.querySelector('.evaluation-right'); // Select the evaluation right section
+	const evaluationContainer = document.querySelector('.evaluation-container');
+	const evaluationLeft = document.querySelector('.evaluation-left');
+	const evaluationRights = document.querySelectorAll('.evaluation-right');
 	const faq = document.querySelector('.faq'); // Select the faq section
 	const image = document.querySelector('.image'); // Select the image section
 	const rows = document.querySelectorAll('.row-animate');
@@ -395,31 +396,40 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: 'power3.out', // Smooth easing
 	});
 
-	// Animation for evaluationRight
-	gsap.from(evaluationRight, {
-		opacity: 0, // Fade in from transparent
-		x: 50, // Move in from 50px to the right
-		duration: 2, // Animation duration of 2 seconds
-		ease: 'power3.out', // Smooth easing
-		scrollTrigger: {
-			trigger: evaluationRight, // Trigger animation when the evaluationRight section appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
-	});
+	function setupAnimations() {
+		const isMobile = window.innerWidth < 768;
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: evaluationContainer,
+				start: 'top 70%',
+				toggleActions: 'play none none none',
+			},
+		});
 
-	// Animation for evaluationLeft
-	gsap.from(evaluationLeft, {
-		opacity: 0, // Fade in from transparent
-		x: -50, // Move in from 50px to the left
-		duration: 2, // Animation duration of 2 seconds
-		ease: 'power3.out', // Smooth easing
-		scrollTrigger: {
-			trigger: evaluationLeft, // Trigger animation when the evaluationLeft section appears
-			start: 'top 80%', // Start when 80% of the section is in view
-			toggleActions: 'play none none none',
-		},
-	});
+		// Left section
+		tl.from(evaluationLeft, {
+			opacity: 0,
+			x: -30,
+			duration: 0.8,
+			ease: 'power2.out',
+		});
+
+		// Right sections
+		evaluationRights.forEach((right) => {
+			tl.from(
+				right,
+				{
+					opacity: 0,
+					x: 30,
+					duration: 0.8,
+					ease: 'power2.out',
+				},
+				isMobile ? '>' : `+=${0.2}`
+			); // Sequential on mobile, slight overlap on desktop
+		});
+	}
+
+	setupAnimations();
 
 	gsap.from(faq, {
 		rotationX: 90, // Flip on the X-axis
