@@ -522,11 +522,11 @@ document.addEventListener('DOMContentLoaded', function () {
 				links?.forEach((link) => {
 					if (link.closest('.menu-link')) {
 						// Mobile menu link
-						link.classList.add('bg-ai-green', 'text-white');
+						link.classList.add('bg-ai-green', 'text-black');
 					} else if (link.classList.contains('nav-link')) {
 						// Desktop nav link
-						link.classList.add('text-gray-900');
-						link.classList.remove('text-black');
+						link.classList.add('text-white');
+						link.classList.remove('text-white');
 
 						// Also underline the span inside the nav link
 						const underlineSpan = link.querySelector('span');
@@ -540,11 +540,11 @@ document.addEventListener('DOMContentLoaded', function () {
 				links?.forEach((link) => {
 					if (link.closest('.menu-link')) {
 						// Mobile menu link
-						link.classList.remove('bg-ai-green', 'text-white');
+						link.classList.remove('bg-ai-green', 'text-black');
 					} else if (link.classList.contains('nav-link')) {
 						// Desktop nav link
-						link.classList.remove('text-gray-900');
-						link.classList.add('text-black');
+						link.classList.remove('text-white');
+						link.classList.add('text-white');
 
 						// Remove underline effect
 						const underlineSpan = link.querySelector('span');

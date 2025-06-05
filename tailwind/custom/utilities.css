@@ -88,6 +88,7 @@ body.woocommerce-checkout {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	color: white;
 }
 body.woocommerce-checkout a {
 	color: #3ad590;
@@ -368,4 +369,9 @@ form.checkout.woocommerce-checkout .second-column {
 .woocommerce-checkout #place_order:hover {
 	/* Glow */
 	box-shadow: 0px 3px 35px 0px rgba(58, 213, 144, 0.5);
+}
+
+/* WOOCOMMERCE ORDER RECEIVED */
+body.woocommerce-order-received {
+	min-height: 100vh;
 }

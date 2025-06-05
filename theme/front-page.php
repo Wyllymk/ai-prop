@@ -397,7 +397,7 @@ get_header();
                     <div x-data="{ selected: 'phase-2' }" class="w-full flex items-center justify-between space-x-5">
                         <!-- Phase 1 -->
                         <div :class="selected === 'phase-1' ? 'bg-ai-green/10 border-white/10 border' : 'bg-transparent border-white/10 border'"
-                            class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl shadow-sm hover:shadow-ai-green transition-all duration-200"
+                            class="cursor-pointer flex items-center justify-start py-3 px-3 md:px-6 flex-1 flex-shrink-0 basis-0 rounded-xl shadow-sm hover:shadow-ai-green transition-all duration-200"
                             @click="selected = 'phase-1'" id="phase-1-btn">
 
                             <!-- Dynamic Glow Dot -->
@@ -428,7 +428,7 @@ get_header();
 
                         <!-- Phase 2 -->
                         <div :class="selected === 'phase-2' ? 'bg-ai-green/10 border-white/10 border' : 'bg-transparent border-white/10 border'"
-                            class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl shadow-sm hover:shadow-ai-green transition-all duration-200"
+                            class="cursor-pointer flex items-center justify-start py-3 px-3 md:px-6 flex-1 flex-shrink-0 basis-0 rounded-xl shadow-sm hover:shadow-ai-green transition-all duration-200"
                             @click="selected = 'phase-2'" id="phase-2-btn">
 
                             <!-- Dynamic Glow Dot -->
@@ -530,7 +530,7 @@ get_header();
                     </div>
                 </div>
                 <div
-                    class="plan-item h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-6">
+                    class="plan-item h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-3 md:p-6">
                     <!-- Payment Section -->
                     <div class="w-full flex flex-col items-center justify-center space-y-5">
                         <div class="flex items-end justify-start w-full space-x-3">
