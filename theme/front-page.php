@@ -1454,7 +1454,7 @@ get_header();
                 <h2
                     class="text-center text-4xl font-bold leading-tight md:text-6xl  font-manrope bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent">
                     <?php esc_html_e( 'We help you Master the', 'ai_prop' ); ?><br>
-                    <?php esc_html_e( 'trade Markets', 'ai_prop' ); ?>
+                    <?php esc_html_e( 'Trade Markets', 'ai_prop' ); ?>
                 </h2>
                 <p class="text-base w-full text-center">
                     <?php esc_html_e( "Pass our challenge, get funded, and trade with real capital. ", 'ai_prop' ); ?>
