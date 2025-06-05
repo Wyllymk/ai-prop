@@ -398,7 +398,7 @@ get_header();
                         <!-- Phase 1 -->
                         <div :class="selected === 'phase-1' ? 'bg-ai-green/10 border-white/10 border' : 'bg-transparent border-white/10 border'"
                             class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl"
-                            @click="selected = 'phase-1'">
+                            @click="selected = 'phase-1'" id="phase-1-btn">
 
                             <!-- Dynamic Glow Dot -->
                             <div class="h-full flex items-center justify-center mr-6">
@@ -429,7 +429,7 @@ get_header();
                         <!-- Phase 2 -->
                         <div :class="selected === 'phase-2' ? 'bg-ai-green/10 border-white/10 border' : 'bg-transparent border-white/10 border'"
                             class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl"
-                            @click="selected = 'phase-2'">
+                            @click="selected = 'phase-2'" id="phase-2-btn">
 
                             <!-- Dynamic Glow Dot -->
                             <div class="h-full flex items-center justify-center mr-6">
@@ -458,12 +458,11 @@ get_header();
                         </div>
                     </div>
 
-
                     <h4 class="text-xl font-manrope text-white/80">
                         <?php esc_html_e( 'Select Account Size', 'ai_prop' ); ?>
                     </h4>
 
-                    <div x-data="{ selected: 500000, options: [10000, 25000, 50000, 100000, 200000, 500000] }"
+                    <div x-data="{ selected: 100000, options: [10000, 25000, 50000, 100000, 200000, 500000] }"
                         class="w-full">
                         <div class="relative flex items-center justify-between">
                             <!-- Horizontal line behind dots -->
@@ -471,9 +470,10 @@ get_header();
 
                             <template x-for="(option, index) in options" :key="option">
                                 <div :id="'btn-' + option" class="flex flex-col items-center cursor-pointer group"
-                                    @click="selected = option" @keydown.enter="selected = option"
-                                    @keydown.space="selected = option" role="button" tabindex="0" aria-pressed="false"
-                                    :aria-pressed="selected === option">
+                                    @click="selected = option; handleAmountClick(option)"
+                                    @keydown.enter="selected = option; handleAmountClick(option)"
+                                    @keydown.space="selected = option; handleAmountClick(option)" role="button"
+                                    tabindex="0" aria-pressed="false" :aria-pressed="selected === option">
                                     <div class="text-sm font-medium transition-all duration-200"
                                         :class="{'text-ai-green text-lg font-semibold': selected === option, 'text-white/50 group-hover:text-white/80': selected !== option }">
                                         <span x-text="'$' + (option / 1000) + 'K'"></span>
@@ -505,14 +505,12 @@ get_header();
                                             <?php esc_html_e( 'Phase 1', 'ai_prop' ); ?>
                                         </h5>
                                     </th>
-
-                                    <th class="px-2 md:px-4 py-2">
+                                    <th class="px-2 md:px-4 py-2" id="phase2-header">
                                         <h5
                                             class="text-center font-geist text-base font-medium leading-[14px] bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent whitespace-nowrap">
                                             <?php esc_html_e( 'Phase 2', 'ai_prop' ); ?>
                                         </h5>
                                     </th>
-
                                     <th class="px-2 md:px-4 py-2">
                                         <h5
                                             class="text-center font-geist text-base font-medium leading-[14px] bg-gradient-to-b from-white to-[#999] bg-clip-text text-transparent whitespace-nowrap">
@@ -522,73 +520,7 @@ get_header();
                                 </tr>
                             </thead>
                             <tbody id="challenge-body">
-                                <tr class="text-sm border-b border-white/10">
-                                    <td class="px-2 md:px-4 py-2">
-                                        <?php esc_html_e( 'Profit Target', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '8%', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '8%', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '8%', 'ai_prop' ); ?>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm border-b border-white/10">
-                                    <td class="px-2 md:px-4 py-2">
-                                        <?php esc_html_e( 'Minimum Trading Days', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '0', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '0', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '0', 'ai_prop' ); ?>
-                                    </td>
-                                </tr>
-                                <tr class="text-sm border-b border-white/10">
-                                    <td class="px-2 md:px-4 py-2">
-                                        <?php esc_html_e( 'Daily Drawdown', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '4%', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '4%', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '4%', 'ai_prop' ); ?>
-                                </tr>
-                                <tr class="text-sm border-b border-white/10">
-                                    <td class="px-2 md:px-4 py-2">
-                                        <?php esc_html_e( 'Maximum Drawdown', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '10%', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '10%', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '10%', 'ai_prop' ); ?>
-                                </tr>
-                                <tr class="text-sm border-b border-white/10">
-                                    <td class="px-2 md:px-4 py-2">
-                                        <?php esc_html_e( 'Trading Period', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( '10%', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( 'N/A', 'ai_prop' ); ?>
-                                    </td>
-                                    <td class="px-2 md:px-4 py-2 text-center font-geist">
-                                        <?php esc_html_e( 'N/A', 'ai_prop' ); ?>
-                                </tr>
+                                <!-- Content will be populated dynamically -->
                             </tbody>
                         </table>
                     </div>
@@ -605,7 +537,7 @@ get_header();
                             <h3 id="priceAmt" class="text-4xl font-semibold">
                                 <?php esc_html_e( '$109.00', 'ai_prop' ); ?>
                             </h3>
-                            <p class="text-lg text-white/50">
+                            <p class="text-lg text-white/50" id="accountSizeText">
                                 <?php esc_html_e( 'for $100K Account', 'ai_prop' ); ?>
                             </p>
                         </div>
