@@ -165,11 +165,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
             class="w-full h-full object-contain">
         <!-- Bottom inner shadow -->
         <div
-            class="absolute inset-x-0 bottom-0 h-5 bg-[linear-gradient(to_top,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
+            class="absolute inset-x-0 bottom-5 h-10 bg-[linear-gradient(to_top,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
         </div>
         <!-- Top inner shadow -->
         <div
-            class="absolute inset-x-0 top-0 h-5 bg-[linear-gradient(to_bottom,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
+            class="absolute inset-x-0 top-5 h-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
         </div>
         <!-- Left inner shadow -->
         <div
