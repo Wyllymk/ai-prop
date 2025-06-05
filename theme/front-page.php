@@ -390,7 +390,7 @@ get_header();
 
             <div class="w-full md:w-2/3 flex flex-col items-center justify-between space-y-10">
                 <div
-                    class="plan-item h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-6">
+                    class="plan-item h-fit w-full flex flex-col items-center justify-center space-y-5 bg-ai-blue-2 shadow-[inset_0_-8px_30px_0_rgba(92,219,149,0.15)] rounded-lg p-3 md:p-6">
                     <h4 class="text-xl font-manrope text-white/80">
                         <?php esc_html_e( 'Select a Challenge', 'ai_prop' ); ?>
                     </h4>
@@ -537,7 +537,7 @@ get_header();
                             <h3 id="priceAmt" class="text-4xl font-semibold">
                                 <?php esc_html_e( '$109.00', 'ai_prop' ); ?>
                             </h3>
-                            <p class="text-lg text-white/50" id="accountSizeText">
+                            <p class="text-lg text-white/50 whitespace-nowrap" id="accountSizeText">
                                 <?php esc_html_e( 'for $100K Account', 'ai_prop' ); ?>
                             </p>
                         </div>
@@ -795,15 +795,15 @@ get_header();
                             class="object-cover w-full h-auto">
                     </div>
                     <!-- Body -->
-                    <div class="mt-20 space-y-2 flex justify-end flex-col z-20 p-3 md:p-6">
+                    <div class="w-full mt-20 space-y-2 flex justify-end flex-col z-20 p-3 md:p-6">
                         <h4 class="text-lg font-bold font-manrope text-center">
                             <?php esc_html_e( 'Stay Updated with our latest news', 'ai_prop' ); ?>
                         </h4>
                         <div class="bg-[#062c3e] p-1.5 rounded-md flex items-center w-full">
                             <input type="email" placeholder="Enter your email"
-                                class="bg-transparent text-white placeholder-white px-4 py-2 outline-none flex-1" />
+                                class="w-3/5 md:w-full bg-transparent text-white placeholder-white/75 px-x md:px-4 py-2 outline-none flex-1" />
                             <button
-                                class="cursor-pointer whitespace-nowrap bg-gradient-to-r from-ai-green to-blue-900 text-white font-medium px-6 py-2 rounded-md hover:drop-shadow-ai-green transition">
+                                class="w-2/5 md:w-full cursor-pointer whitespace-nowrap bg-gradient-to-r from-ai-green to-blue-900 text-white font-medium px-3 md:px-6 py-2 rounded-md hover:drop-shadow-ai-green transition">
                                 <?php esc_html_e( 'Join Now', 'ai_prop' ); ?>
                             </button>
                         </div>
@@ -860,20 +860,20 @@ get_header();
 
         <!-- FAQ Section -->
         <section id="faq"
-            class="faq relative flex align-center justify-center p-4 min-h-fit bg-ai-faq bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
-            <div class="p-6 md:p-10 w-full md:w-5/6 flex flex-col space-y-8 md:space-y-0 md:flex-row">
+            class="faq relative flex align-center justify-center min-h-fit bg-ai-faq bg-cover bg-center bg-no-repeat overflow-hidden will-change-auto">
+            <div class="p-3 md:p-10 w-full md:w-5/6 flex flex-col space-y-8 md:space-y-0 md:flex-row">
                 <div class="flex flex-col space-y-10 items-center md:items-start justify-start w-full md:w-2/5">
                     <!-- Heading Content -->
                     <div class="w-fit">
-                        <h5 class="text-start text-ai-green text-sm md:text-base mb-5">
+                        <h5 class="text-center md:text-start text-ai-green text-sm md:text-base mb-5">
                             <?php esc_html_e( 'FREQUENTLY ASKED QUESTIONS', 'ai_prop' ); ?>
                         </h5>
-                        <h2 class="text-2xl font-bold leading-tight md:text-4xl font-manrope">
+                        <h2 class="text-center md:text-start text-2xl font-bold leading-tight md:text-4xl font-manrope">
                             <?php esc_html_e( 'We have the answers', 'ai_prop' ); ?>
                         </h2>
                     </div>
                     <div class="w-fit flex flex-col items-center md:items-start space-y-4">
-                        <p class="text-base w-full">
+                        <p class="text-center md:text-start text-base w-full">
                             <?php esc_html_e( "Got More Questions?", 'ai_prop' ); ?>
                         </p>
                         <div class="flex items-center space-x-4">
