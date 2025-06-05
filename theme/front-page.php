@@ -542,8 +542,9 @@ get_header();
                             </p>
                         </div>
                         <div class="w-full">
-                            <a id="priceBtn" href="#"
-                                class="w-full flex justify-center items-center gap-2 p-[12px_20px] rounded-lg border border-[rgba(113,136,149,0.30)] bg-gradient-to-r from-ai-green from-[-27.66%] to-[#05386B] to-[170.07%] hover:drop-shadow-ai-green">
+                            <a id="priceBtn"
+                                href="https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=24"
+                                class="w-full flex justify-center items-center gap-2 p-[12px_20px] rounded-lg border border-ai-gray bg-gradient-to-r from-ai-green from-[-27.66%] to-ai-blue-4 to-[170.07%] hover:drop-shadow-ai-green cursor-pointer">
                                 <?php esc_html_e( 'Buy Challenge', 'ai_prop' ); ?>
                             </a>
                         </div>
