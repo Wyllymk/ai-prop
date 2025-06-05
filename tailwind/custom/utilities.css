@@ -81,6 +81,15 @@ body.woocommerce-checkout {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+body.woocommerce-checkout a {
+	color: #3ad590;
+	text-decoration: none;
+}
+body.woocommerce-checkout a:hover {
+	color: #1d807c;
+	text-decoration: underline;
+}
+
 .woocommerce-checkout .entry-header {
 	display: none;
 }

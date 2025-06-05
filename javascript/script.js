@@ -986,61 +986,61 @@ const priceMapping = {
 	10000: {
 		'phase-1': {
 			price: '$159.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=14',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=14',
 		},
 		'phase-2': {
 			price: '$159.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=21',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=21',
 		},
 	},
 	25000: {
 		'phase-1': {
 			price: '$269.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=15',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=15',
 		},
 		'phase-2': {
 			price: '$269.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=22',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=22',
 		},
 	},
 	50000: {
 		'phase-1': {
 			price: '$379.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=16',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=16',
 		},
 		'phase-2': {
 			price: '$379.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=23',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=23',
 		},
 	},
 	100000: {
 		'phase-1': {
 			price: '$649.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=17',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=17',
 		},
 		'phase-2': {
 			price: '$649.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=24',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=24',
 		},
 	},
 	200000: {
 		'phase-1': {
 			price: '$1,249.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=18',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=18',
 		},
 		'phase-2': {
 			price: '$1,249.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=25',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=25',
 		},
 	},
 	500000: {
 		'phase-1': {
 			price: '$2,299.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=19',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=19',
 		},
 		'phase-2': {
 			price: '$2,299.00',
-			link: 'https://aiprop.com/checkout/?add-to-cart=26',
+			link: 'https://orangered-anteater-575642.hostingersite.com/checkout/?add-to-cart=26',
 		},
 	},
 };

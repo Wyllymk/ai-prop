@@ -41,7 +41,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                     <a href="<?php echo esc_url( site_url( '/' ) ); ?>"
                         class="flex items-center justify-center text-nowrap">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="logo"
-                            class="!h-8 lg:!h-8 !my-0">
+                            class="!h-8 lg:!h-8 !my-2">
                     </a>
                 </div>
                 <div class="flex items-center justify-between">
@@ -50,7 +50,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                     <div class="flex items-center justify-end">
                         <!-- Button component -->
                         <a href="https://dashboard.aiprop.com/"
-                            class="no-underline rounded-lg text-xs lg:text-lg border border-ai-gray-2/20 bg-transparent hover:shadow-white px-4 py-1 !text-white transition duration-300 ease-in-out">
+                            class="no-underline rounded-lg text-xs lg:text-lg border border-ai-gray-2/20 bg-transparent hover:shadow-white px-4 py-2 !text-white transition duration-300 ease-in-out">
                             <?php esc_html_e( 'Login', 'ai_prop' ); ?>
                         </a>
                     </div>
