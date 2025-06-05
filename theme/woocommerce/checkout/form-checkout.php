@@ -50,7 +50,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                     <div class="flex items-center justify-end">
                         <!-- Button component -->
                         <a href="https://dashboard.aiprop.com/"
-                            class="no-underline rounded-lg text-xs lg:text-lg border border-ai-gray-2/20 bg-transparent hover:shadow-white px-4 py-2 !text-white transition duration-300 ease-in-out">
+                            class="!no-underline rounded-lg text-xs lg:text-lg border border-ai-gray-2/20 bg-transparent shadow-sm hover:!shadow-white px-4 py-2 !text-white transition duration-300 ease-in-out">
                             <?php esc_html_e( 'Login', 'ai_prop' ); ?>
                         </a>
                     </div>
@@ -70,10 +70,10 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
     <!-- Header Section -->
     <div class="relative items-start justify-start text-white flex flex-col space-y-4 z-20">
         <!-- Go Back Section -->
-        <a id="prev_button" class="flex items-center no-underline" href="javascript:void(0)">
+        <a class="flex items-center !no-underline" href="<?php echo esc_url( site_url( '/' ) ); ?>">
             <img decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/chevron-left.png"
                 alt="back" class="!my-0 size-5 sm:mr-2">
-            <span class="text-white no-underline hover:text-gray-800">
+            <span class="text-white !no-underline hover:text-white/75">
                 <?php esc_html_e( 'Go Back', 'ai_prop' ); ?>
             </span>
         </a>
@@ -206,15 +206,15 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                     <?php esc_html_e( 'Platform', 'ai_prop' ); ?>
                 </h6>
                 <a href="<?php echo is_front_page() ? '#home' : esc_url( site_url( '/' ) ); ?>"
-                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform no-underline">
+                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform !no-underline">
                     <?php esc_html_e( 'Home', 'ai_prop' ); ?>
                 </a>
                 <a href="<?php echo is_front_page() ? '#pricing' : esc_url( site_url( '/' ) ) . '#pricing'; ?>"
-                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform no-underline">
+                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform !no-underline">
                     <?php esc_html_e( 'Pricing', 'ai_prop' ); ?>
                 </a>
                 <a href="<?php echo is_front_page() ? '#faq' : esc_url( site_url( '/' ) ) . '#faq'; ?>"
-                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform no-underline">
+                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform !no-underline">
                     <?php esc_html_e( 'FAQs', 'ai_prop' ); ?>
                 </a>
 
@@ -223,16 +223,16 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                 <h6 class="text-white">
                     <?php esc_html_e( 'Join the Community', 'ai_prop' ); ?>
                 </h6>
-                <a href="https://x.com/AipropCom"
-                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform no-underline">
+                <a href="https://x.com/AipropCom" target="_blank"
+                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform !no-underline">
                     <?php esc_html_e( 'X / Twitter', 'ai_prop' ); ?>
                 </a>
-                <a href="#"
-                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform no-underline">
+                <a href="#" target="_blank"
+                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform !no-underline">
                     <?php esc_html_e( 'Instagram', 'ai_prop' ); ?>
                 </a>
-                <a href="#"
-                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform no-underline">
+                <a href="#" target="_blank"
+                    class="!text-white/75 text-sm hover:!text-ai-green hover:translate-x-1 transition-transform !no-underline">
                     <?php esc_html_e( 'Discord', 'ai_prop' ); ?>
                 </a>
             </div>

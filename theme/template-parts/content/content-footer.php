@@ -51,15 +51,15 @@ defined( 'ABSPATH' ) || exit;
                 <h6 class="text-white">
                     <?php esc_html_e( 'Join the Community', 'ai_prop' ); ?>
                 </h6>
-                <a href="https://x.com/AipropCom"
+                <a href="https://x.com/AipropCom" target="_blank"
                     class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'X / Twitter', 'ai_prop' ); ?>
                 </a>
-                <a href="#"
+                <a href="#" target="_blank"
                     class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'Instagram', 'ai_prop' ); ?>
                 </a>
-                <a href="#"
+                <a href="#" target="_blank"
                     class="text-white/75 text-sm hover:text-ai-green hover:translate-x-1 transition-transform cursor-pointer">
                     <?php esc_html_e( 'Discord', 'ai_prop' ); ?>
                 </a>

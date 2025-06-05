@@ -87,7 +87,7 @@ body.woocommerce-checkout a {
 }
 body.woocommerce-checkout a:hover {
 	color: #1d807c;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .woocommerce-checkout .entry-header {

@@ -77,6 +77,7 @@
 	--drop-shadow-white-glow: 0 0 5px rgba(255, 255, 255, 1);
 	--drop-shadow-ai-green: 0 0 5px rgba(58, 213, 144, 1);
 	--drop-shadow-ai-dark-green: 0 0 5px rgba(5, 210, 33, 1);
+	--drop-shadow-ai-blue: 0 0 5px rgba(30, 58, 138, 1);
 
 	/*Gradients*/
 	--my-gradient: linear-gradient(

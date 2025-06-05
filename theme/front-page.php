@@ -397,7 +397,7 @@ get_header();
                     <div x-data="{ selected: 'phase-2' }" class="w-full flex items-center justify-between space-x-5">
                         <!-- Phase 1 -->
                         <div :class="selected === 'phase-1' ? 'bg-ai-green/10 border-white/10 border' : 'bg-transparent border-white/10 border'"
-                            class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl"
+                            class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl shadow-sm hover:shadow-ai-green transition-all duration-200"
                             @click="selected = 'phase-1'" id="phase-1-btn">
 
                             <!-- Dynamic Glow Dot -->
@@ -428,7 +428,7 @@ get_header();
 
                         <!-- Phase 2 -->
                         <div :class="selected === 'phase-2' ? 'bg-ai-green/10 border-white/10 border' : 'bg-transparent border-white/10 border'"
-                            class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl"
+                            class="cursor-pointer flex items-center justify-start py-3 px-6 flex-1 flex-shrink-0 basis-0 rounded-xl shadow-sm hover:shadow-ai-green transition-all duration-200"
                             @click="selected = 'phase-2'" id="phase-2-btn">
 
                             <!-- Dynamic Glow Dot -->
@@ -802,7 +802,7 @@ get_header();
                             <input type="email" placeholder="Enter your email"
                                 class="bg-transparent text-white placeholder-white px-4 py-2 outline-none flex-1" />
                             <button
-                                class="whitespace-nowrap bg-gradient-to-r from-ai-green to-blue-900 text-white font-medium px-6 py-2 rounded-md hover:drop-shadow-ai-green transition">
+                                class="cursor-pointer whitespace-nowrap bg-gradient-to-r from-ai-green to-blue-900 text-white font-medium px-6 py-2 rounded-md hover:drop-shadow-ai-green transition">
                                 <?php esc_html_e( 'Join Now', 'ai_prop' ); ?>
                             </button>
                         </div>
@@ -849,7 +849,7 @@ get_header();
                             <?php esc_html_e( 'Be part of the Community', 'ai_prop' ); ?>
                         </h4>
                         <a href="<?php echo is_front_page() ? '#' : esc_url( site_url( '/' ) ) . '#'; ?>"
-                            class="text-center whitespace-nowrap text-lg rounded-lg bg-blue-900 px-4 py-2 hover:drop-shadow-ai-green transition duration-300 ease-in-out">
+                            class="text-center whitespace-nowrap text-lg rounded-lg bg-blue-900 px-4 py-2 hover:drop-shadow-ai-blue transition duration-300 ease-in-out">
                             <?php esc_html_e( 'Join Discord', 'ai_prop' ); ?>
                         </a>
                     </div>
@@ -876,9 +876,9 @@ get_header();
                             <?php esc_html_e( "Got More Questions?", 'ai_prop' ); ?>
                         </p>
                         <div class="flex items-center space-x-4">
-                            <a href="<?php echo is_front_page() ? '#' : esc_url( site_url( '/' ) ) . '#'; ?>"
+                            <a href="<?php echo is_front_page() ? '#pricing' : esc_url( site_url( '/' ) ) . '#pricing'; ?>"
                                 class="flex items-center justify-between whitespace-nowrap text-lg rounded-lg bg-gradient-to-r from-green-400 -from-28% to-blue-900 to-127% px-4 py-2 hover:drop-shadow-ai-green transition duration-300 ease-in-out">
-                                <?php esc_html_e( 'Contact Us', 'ai_prop' ); ?>
+                                <?php esc_html_e( 'Get Funded Now', 'ai_prop' ); ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-right.png"
                                     alt="arrow-right" class="h-7">
                             </a>
@@ -1436,7 +1436,7 @@ get_header();
                 </div>
             </div>
             <div class="flex items-center self-center space-x-4">
-                <a href="<?php echo is_front_page() ? '#' : esc_url( site_url( '/' ) ) . '#'; ?>"
+                <a href="<?php echo is_front_page() ? '#pricing' : esc_url( site_url( '/' ) ) . '#pricing'; ?>"
                     class="flex items-center justify-between whitespace-nowrap text-lg rounded-lg bg-gradient-to-r from-green-400 -from-28% to-blue-900 to-127% px-4 py-2 hover:drop-shadow-ai-green transition duration-300 ease-in-out">
                     <?php esc_html_e( 'Get Funded Now', 'ai_prop' ); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-right.png" alt="arrow-right"
@@ -1459,7 +1459,7 @@ get_header();
                     <?php esc_html_e( "Pass our challenge, get funded, and trade with real capital. ", 'ai_prop' ); ?>
                 </p>
                 <div class="flex items-center space-x-4">
-                    <a href="<?php echo is_front_page() ? '#' : esc_url( site_url( '/' ) ) . '#'; ?>"
+                    <a href="<?php echo is_front_page() ? '#pricing' : esc_url( site_url( '/' ) ) . '#pricing'; ?>"
                         class="flex items-center justify-between whitespace-nowrap text-lg rounded-lg bg-gradient-to-r from-green-400 -from-28% to-blue-900 to-127% px-4 py-2 hover:drop-shadow-ai-green transition duration-300 ease-in-out">
                         <?php esc_html_e( 'Get Funded Now', 'ai_prop' ); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-right.png"

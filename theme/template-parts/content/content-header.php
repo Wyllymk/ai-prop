@@ -70,7 +70,7 @@ defined( 'ABSPATH' ) || exit;
                     <div class="flex items-center space-x-4">
                         <!-- Button component -->
                         <a href="https://dashboard.aiprop.com/"
-                            class="hidden rounded-lg text-xs lg:text-lg border border-ai-gray-2/20 bg-transparent hover:shadow-white px-4 py-1 text-white md:block transition duration-300 ease-in-out">
+                            class="hidden rounded-lg text-xs lg:text-lg border border-ai-gray-2/20 bg-transparent shadow-sm hover:shadow-white px-4 py-1 text-white md:block transition duration-300 ease-in-out">
                             <?php esc_html_e( 'Login', 'ai_prop' ); ?>
                         </a>
                         <a href="<?php echo is_front_page() ? '#pricing' : esc_url( site_url( '/' ) ) . '#pricing'; ?>"
