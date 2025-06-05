@@ -52,8 +52,12 @@ form.checkout.woocommerce-checkout {
 
 #coupon_display .woocommerce-message {
 	background:
-		linear-gradient(55deg, rgba(14, 16, 29, 0) 40.49%, #121525 99.37%),
-		#0b0c16;
+		linear-gradient(
+			55deg,
+			rgba(14, 16, 29, 0) 40.49%,
+			rgba(29, 111, 66, 0.12) 99.37%
+		),
+		#03131b;
 	border-color: #3ad590;
 	color: #3ad590;
 }
@@ -64,8 +68,12 @@ form.checkout.woocommerce-checkout {
 
 #coupon_display .woocommerce-error {
 	background:
-		linear-gradient(55deg, rgba(14, 16, 29, 0) 40.49%, #121525 99.37%),
-		#0b0c16;
+		linear-gradient(
+			55deg,
+			rgba(14, 16, 29, 0) 40.49%,
+			rgba(29, 111, 66, 0.12) 99.37%
+		),
+		#03131b;
 	border-color: #f56c6c;
 	color: #f56c6c;
 }

@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		tl.from(evaluationLeft, {
 			opacity: 0,
 			x: -30,
-			duration: 0.8,
+			duration: 0.5,
 			ease: 'power2.out',
 		});
 
@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				{
 					opacity: 0,
 					x: 30,
-					duration: 0.8,
+					duration: 0.5,
 					ease: 'power2.out',
 				},
 				isMobile ? '>' : `+=${0.2}`
