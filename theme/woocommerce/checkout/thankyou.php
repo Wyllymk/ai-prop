@@ -114,7 +114,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
             <!-- Top inner shadow -->
             <div
-                class="absolute inset-x-0 top-0 h-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
+                class="absolute inset-x-0 top-0 h-20 bg-[linear-gradient(to_bottom,rgba(0,0,0,10)_10%,transparent_100%)] z-11">
             </div>
             <!-- Left inner shadow -->
             <div

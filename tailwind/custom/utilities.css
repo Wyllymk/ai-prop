@@ -375,3 +375,1333 @@ form.checkout.woocommerce-checkout .second-column {
 body.woocommerce-order-received {
 	min-height: 100vh;
 }
+
+/* AFFILIATES CSS */
+/* Ensure all styles are scoped to page-id-50 */
+/* Login CSS */
+body.page-id-50 #page {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #f5f5f5;
+}
+
+body.page-id-50 #content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+body.page-id-50 #primary {
+	width: 100%;
+}
+
+body.page-id-50 #main {
+	width: 100%;
+}
+
+body.page-id-50 .entry-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+body.page-id-50 .entry-title {
+	font-size: 2rem;
+	color: #333;
+	font-weight: 700;
+}
+
+body.page-id-50 .entry-content {
+	padding: 20px;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+body.page-id-50 .affwp-form {
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 25px;
+}
+
+body.page-id-50 fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.page-id-50 legend {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+body.page-id-50 p {
+	margin: 0 0 15px;
+}
+
+body.page-id-50 label {
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
+	font-weight: 500;
+}
+
+body.page-id-50 input[type="text"],
+body.page-id-50 input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	transition: border-color 0.3s ease;
+}
+
+body.page-id-50 input[type="text"]:focus,
+body.page-id-50 input[type="password"]:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+body.page-id-50 .affwp-user-remember {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+body.page-id-50 input[type="checkbox"] {
+	margin-right: 8px;
+	width: 16px;
+	height: 16px;
+}
+
+body.page-id-50 input[type="submit"].button {
+	width: 100%;
+	padding: 12px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+body.page-id-50 input[type="submit"].button:hover {
+	background: #0056b3;
+}
+
+body.page-id-50 .affwp-lost-password {
+	text-align: center;
+}
+
+body.page-id-50 .affwp-lost-password a {
+	color: #007bff;
+	text-decoration: none;
+	font-size: 0.9rem;
+}
+
+body.page-id-50 .affwp-lost-password a:hover {
+	text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+	body.page-id-50 #content {
+		padding: 10px;
+	}
+
+	body.page-id-50 .entry-content {
+		max-width: 100%;
+	}
+
+	body.page-id-50 .affwp-form {
+		padding: 15px;
+	}
+
+	body.page-id-50 .entry-title {
+		font-size: 1.5rem;
+	}
+
+	body.page-id-50 legend {
+		font-size: 1.25rem;
+	}
+
+	body.page-id-50 input[type="text"],
+	body.page-id-50 input[type="password"],
+	body.page-id-50 input[type="submit"].button {
+		font-size: 0.9rem;
+	}
+}
+
+/* LOST PASSWORD */
+/* Ensure all styles are scoped to page-id-10 */
+body.page-id-10 #page {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #f5f5f5;
+}
+
+body.page-id-10 #content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+body.page-id-10 #primary {
+	width: 100%;
+}
+
+body.page-id-10 #main {
+	width: 100%;
+}
+
+body.page-id-10 .entry-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+body.page-id-10 .entry-title {
+	font-size: 2rem;
+	color: #333;
+	font-weight: 700;
+}
+
+body.page-id-10 .entry-content {
+	padding: 20px;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+body.page-id-10 .woocommerce {
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 25px;
+}
+
+body.page-id-10 .lost_reset_password p {
+	margin: 0 0 15px;
+	color: #555;
+	line-height: 1.5;
+	width: 100%;
+}
+
+body.page-id-10 .woocommerce-form-row {
+	margin: 0 0 15px;
+}
+
+body.page-id-10 label {
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
+	font-weight: 500;
+}
+
+body.page-id-10 .required {
+	color: #ff0000;
+	margin-left: 2px;
+}
+
+body.page-id-10 .screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+body.page-id-10 .woocommerce-Input--text {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	transition: border-color 0.3s ease;
+}
+
+body.page-id-10 .woocommerce-Input--text:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+body.page-id-10 .clear {
+	clear: both;
+}
+
+body.page-id-10 .woocommerce-Button.button {
+	width: 100%;
+	padding: 12px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	text-align: center;
+}
+
+body.page-id-10 .woocommerce-Button.button:hover {
+	background: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+	body.page-id-10 #content {
+		padding: 10px;
+	}
+
+	body.page-id-10 .entry-content {
+		max-width: 100%;
+	}
+
+	body.page-id-10 .woocommerce {
+		padding: 15px;
+	}
+
+	body.page-id-10 .entry-title {
+		font-size: 1.5rem;
+	}
+
+	body.page-id-10 .woocommerce-Input--text,
+	body.page-id-10 .woocommerce-Button.button {
+		font-size: 0.9rem;
+	}
+}
+
+/* Affiliates Registration */
+/* Ensure all styles are scoped to page-id-51 */
+body.page-id-51 #page {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #f5f5f5;
+}
+
+body.page-id-51 #content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+body.page-id-51 #primary {
+	width: 100%;
+}
+
+body.page-id-51 #main {
+	width: 100%;
+}
+
+body.page-id-51 .entry-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+body.page-id-51 .entry-title {
+	font-size: 2rem;
+	color: #333;
+	font-weight: 700;
+}
+
+body.page-id-51 .entry-content {
+	padding: 20px;
+	max-width: 500px; /* Slightly wider for more fields */
+	margin: 0 auto;
+}
+
+body.page-id-51 .affwp-form {
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 25px;
+}
+
+body.page-id-51 fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.page-id-51 legend {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+body.page-id-51 p {
+	margin: 0 0 15px;
+}
+
+body.page-id-51 .affwp-field-label {
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
+	font-weight: 500;
+}
+
+body.page-id-51 .required {
+	color: #ff0000;
+	font-size: 0.9rem;
+	margin-left: 2px;
+}
+
+body.page-id-51 .affwp-field {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	transition: border-color 0.3s ease;
+}
+
+body.page-id-51 .affwp-field:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+body.page-id-51 .affwp-field-textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	resize: vertical;
+	min-height: 100px;
+	transition: border-color 0.3s ease;
+}
+
+body.page-id-51 .affwp-field-textarea:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+body.page-id-51 .button {
+	width: 100%;
+	padding: 12px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+body.page-id-51 .button:hover {
+	background: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+	body.page-id-51 #content {
+		padding: 10px;
+	}
+
+	body.page-id-51 .entry-content {
+		max-width: 100%;
+	}
+
+	body.page-id-51 .affwp-form {
+		padding: 15px;
+	}
+
+	body.page-id-51 .entry-title {
+		font-size: 1.5rem;
+	}
+
+	body.page-id-51 legend {
+		font-size: 1.25rem;
+	}
+
+	body.page-id-51 .affwp-field,
+	body.page-id-51 .affwp-field-textarea,
+	body.page-id-51 .button {
+		font-size: 0.9rem;
+	}
+}
+
+body.page-id-51 .prose-a\:text-primary a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+body.page-id-51 .prose-a\:text-primary a:hover {
+	text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+	body.page-id-51 #content {
+		padding: 10px;
+	}
+
+	body.page-id-51 .entry-content {
+		max-width: 100%;
+	}
+
+	body.page-id-51 .affwp-form {
+		padding: 15px;
+	}
+
+	body.page-id-51 .entry-title {
+		font-size: 1.5rem;
+	}
+
+	body.page-id-51 legend {
+		font-size: 1.25rem;
+	}
+
+	body.page-id-51 .affwp-field,
+	body.page-id-51 .affwp-field-textarea,
+	body.page-id-51 .button {
+		font-size: 0.9rem;
+	}
+}
+
+/* Affiliate Area */
+/* Ensure all styles are scoped to page-id-49 */
+body.page-id-49 #page {
+	min-height: 100vh;
+	background: #f5f5f5;
+}
+
+body.page-id-49 #content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+body.page-id-49 #primary {
+	width: 100%;
+}
+
+body.page-id-49 #main {
+	width: 100%;
+}
+
+body.page-id-49 .entry-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+body.page-id-49 .entry-title {
+	font-size: 2rem;
+	color: #333;
+	font-weight: 700;
+}
+
+body.page-id-49 .entry-content {
+	padding: 20px;
+	max-width: 800px; /* Wider for dashboard content */
+	margin: 0 auto;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard {
+	max-width: 100%;
+}
+
+/* Tabs styling */
+body.page-id-49 #affwp-affiliate-dashboard-tabs {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px;
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 1px solid #ddd;
+}
+
+body.page-id-49 .affwp-affiliate-dashboard-tab {
+	margin: 0;
+}
+
+body.page-id-49 .affwp-affiliate-dashboard-tab a {
+	display: block;
+	padding: 10px 20px;
+	color: #007bff;
+	text-decoration: none;
+	font-weight: 500;
+	transition:
+		background 0.3s ease,
+		color 0.3s ease;
+}
+
+body.page-id-49 .affwp-affiliate-dashboard-tab.active a,
+body.page-id-49 .affwp-affiliate-dashboard-tab a:hover {
+	background: #007bff;
+	color: #fff;
+	border-radius: 4px 4px 0 0;
+}
+
+/* Card styling */
+body.page-id-49 .affwp-card {
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+}
+
+body.page-id-49 .affwp-card__header {
+	padding: 15px 20px;
+	border-bottom: 1px solid #eee;
+}
+
+body.page-id-49 .affwp-card__header h3 {
+	margin: 0;
+	font-size: 1.25rem;
+	color: #333;
+	font-weight: 600;
+}
+
+body.page-id-49 .affwp-card__header p {
+	margin: 5px 0 0;
+	color: #555;
+	font-size: 0.9rem;
+}
+
+body.page-id-49 .affwp-card__content {
+	padding: 20px;
+}
+
+body.page-id-49 .affwp-card__footer {
+	padding: 15px 20px;
+	border-top: 1px solid #eee;
+}
+
+/* Affiliate link section */
+body.page-id-49 .affwp-affiliate-link__display {
+	display: flex;
+	gap: 10px;
+}
+
+body.page-id-49 .affwp-affiliate-link__input {
+	flex: 1;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	background: #f9f9f9;
+	color: #333;
+}
+
+body.page-id-49 .affwp-affiliate-link-copy-link {
+	padding: 10px 20px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+body.page-id-49 .affwp-affiliate-link-copy-link:hover {
+	background: #0056b3;
+}
+
+/* Tooltip styling */
+body.page-id-49 .affwp-card__tooltip {
+	margin-left: 10px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+body.page-id-49 .affwp-card__tooltip svg {
+	width: 20px;
+	height: 20px;
+	color: #007bff;
+}
+
+/* Custom link generator form */
+body.page-id-49 .affwp-custom-link-generator label {
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
+	font-weight: 500;
+}
+
+body.page-id-49 .affwp-custom-link-generator input[type="url"],
+body.page-id-49 .affwp-custom-link-generator input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	transition: border-color 0.3s ease;
+}
+
+body.page-id-49 .affwp-custom-link-generator input[type="url"]:focus,
+body.page-id-49 .affwp-custom-link-generator input[type="text"]:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+body.page-id-49 .affwp-generator-toggle-campaign {
+	display: block;
+	margin: 10px 0;
+	color: #007bff;
+	text-decoration: none;
+}
+
+body.page-id-49 .affwp-generator-toggle-campaign:hover {
+	text-decoration: underline;
+}
+
+body.page-id-49 .affwp-campaign-wrap.affwp-hidden {
+	display: none;
+}
+
+body.page-id-49 #affwp-generator-submit-btn {
+	width: 100%;
+	padding: 12px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+body.page-id-49 #affwp-generator-submit-btn:hover {
+	background: #0056b3;
+}
+
+/* Table styling */
+body.page-id-49 .affwp-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.page-id-49 .affwp-table th,
+body.page-id-49 .affwp-table td {
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid #eee;
+}
+
+body.page-id-49 .affwp-table th {
+	background: #f9f9f9;
+	font-weight: 600;
+	color: #333;
+}
+
+body.page-id-49 .affwp-table.affwp-hidden {
+	display: none;
+}
+
+/* Footer styling */
+body.page-id-49 .entry-footer {
+	text-align: center;
+	margin-top: 20px;
+}
+
+body.page-id-49 .post-edit-link {
+	color: #007bff;
+	text-decoration: none;
+}
+
+body.page-id-49 .post-edit-link:hover {
+	text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	body.page-id-49 .affwp-affiliate-dashboard-tab {
+		flex: 1 0 50%;
+		text-align: center;
+	}
+
+	body.page-id-49 .affwp-affiliate-link__display {
+		flex-direction: column;
+	}
+
+	body.page-id-49 .affwp-affiliate-link-copy-link {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	body.page-id-49 #content {
+		padding: 10px;
+	}
+
+	body.page-id-49 .entry-content {
+		max-width: 100%;
+	}
+
+	body.page-id-49 .entry-title {
+		font-size: 1.5rem;
+	}
+
+	body.page-id-49 .affwp-card__header h3 {
+		font-size: 1.1rem;
+	}
+
+	body.page-id-49 .affwp-affiliate-link__input,
+	body.page-id-49 .affwp-custom-link-generator input[type="url"],
+	body.page-id-49 .affwp-custom-link-generator input[type="text"],
+	body.page-id-49 #affwp-generator-submit-btn,
+	body.page-id-49 .affwp-affiliate-link-copy-link {
+		font-size: 0.9rem;
+	}
+
+	body.page-id-49 .affwp-table th,
+	body.page-id-49 .affwp-table td {
+		padding: 10px;
+	}
+}
+/* Profile settings tab content */
+body.page-id-49 #affwp-affiliate-dashboard-profile {
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 25px;
+	margin-bottom: 20px;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-profile h4 {
+	font-size: 1.25rem;
+	color: #333;
+	font-weight: 600;
+	margin: 0 0 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-profile-form {
+	margin: 0;
+}
+
+/* Wrap and field styling */
+body.page-id-49 .affwp-wrap {
+	margin-bottom: 20px;
+}
+
+body.page-id-49 .affwp-wrap label {
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
+	font-weight: 500;
+}
+
+body.page-id-49 #affwp-payment-email {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	transition: border-color 0.3s ease;
+}
+
+body.page-id-49 #affwp-payment-email:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Checkbox styling */
+body.page-id-49 .affwp-send-notifications-wrap {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+body.page-id-49 #affwp-referral-notifications {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+}
+
+body.page-id-49 .affwp-send-notifications-wrap label {
+	margin: 0;
+	font-weight: 400;
+}
+
+/* Submit button */
+body.page-id-49 .affwp-save-profile-wrap {
+	text-align: right;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-profile .button {
+	width: auto;
+	padding: 10px 20px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-profile .button:hover {
+	background: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+	body.page-id-49 #affwp-affiliate-dashboard-profile {
+		padding: 15px;
+	}
+
+	body.page-id-49 #affwp-affiliate-dashboard-profile h4 {
+		font-size: 1.1rem;
+	}
+
+	body.page-id-49 #affwp-payment-email,
+	body.page-id-49 #affwp-affiliate-dashboard-profile .button {
+		font-size: 0.9rem;
+	}
+
+	body.page-id-49 .affwp-save-profile-wrap {
+		text-align: center;
+	}
+
+	body.page-id-49 #affwp-affiliate-dashboard-profile .button {
+		width: 100%;
+	}
+}
+/* General tab content styling */
+body.page-id-49 .affwp-tab-content {
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 25px;
+	margin-bottom: 20px;
+}
+
+body.page-id-49 .affwp-tab-content h4 {
+	font-size: 1.25rem;
+	color: #333;
+	font-weight: 600;
+	margin: 0 0 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+/* 1. Visits Tab */
+body.page-id-49 #affwp-affiliate-dashboard-visits .affwp-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-visits th,
+body.page-id-49 #affwp-affiliate-dashboard-visits td {
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid #eee;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-visits th {
+	background: #f9f9f9;
+	font-weight: 600;
+	color: #333;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-visits .affwp-table-no-data {
+	text-align: center;
+	color: #777;
+	font-style: italic;
+}
+
+/* 2. Payouts Tab */
+body.page-id-49 #affwp-affiliate-dashboard-payouts .affwp-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-payouts th,
+body.page-id-49 #affwp-affiliate-dashboard-payouts td {
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid #eee;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-payouts th {
+	background: #f9f9f9;
+	font-weight: 600;
+	color: #333;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-payouts .affwp-table-no-data {
+	text-align: center;
+	color: #777;
+	font-style: italic;
+}
+
+/* 3. Referrals Tab */
+body.page-id-49 #affwp-affiliate-dashboard-referrals .affwp-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-referrals th,
+body.page-id-49 #affwp-affiliate-dashboard-referrals td {
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid #eee;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-referrals th {
+	background: #f9f9f9;
+	font-weight: 600;
+	color: #333;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-referrals .affwp-table-no-data {
+	text-align: center;
+	color: #777;
+	font-style: italic;
+}
+
+/* 4. Graphs Tab */
+body.page-id-49 #affwp-affiliate-dashboard-graphs .tablenav.top {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+body.page-id-49 #affwp-graphs-date-options {
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	background: #fff;
+}
+
+body.page-id-49 #affwp-date-range-options {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+body.page-id-49 .affwp-search-date {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+body.page-id-49 .affwp-datepicker {
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	width: 140px;
+}
+
+body.page-id-49 .affwp-datepicker:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+body.page-id-49 #affwp-graphs-filter .button {
+	padding: 8px 15px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+body.page-id-49 #affwp-graphs-filter .button:hover {
+	background: #0056b3;
+}
+
+body.page-id-49 .affwp-graph {
+	margin-top: 20px;
+	background: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+/* 5. Statistics Tab */
+body.page-id-49 #affwp-affiliate-dashboard-referral-counts .affwp-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-referral-counts th,
+body.page-id-49 #affwp-affiliate-dashboard-referral-counts td {
+	padding: 15px;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-referral-counts th {
+	background: #f9f9f9;
+	font-weight: 600;
+	color: #333;
+}
+
+body.page-id-49 #affwp-affiliate-dashboard-referral-counts td {
+	color: #555;
+}
+
+/* 6. Creatives Tab */
+body.page-id-49 #affwp-affiliate-dashboard-creatives .affwp-no-results {
+	text-align: center;
+	color: #777;
+	font-style: italic;
+	margin: 20px 0 0;
+}
+
+/* Responsive table adjustments */
+body.page-id-49 .affwp-table-responsive {
+	overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+	body.page-id-49 .affwp-table-responsive th,
+	body.page-id-49 .affwp-table-responsive td {
+		font-size: 0.9rem;
+		padding: 10px;
+	}
+
+	body.page-id-49 #affwp-affiliate-dashboard-payouts th,
+	body.page-id-49 #affwp-affiliate-dashboard-payouts td {
+		min-width: 100px;
+	}
+}
+
+@media (max-width: 480px) {
+	body.page-id-49 .affwp-tab-content {
+		padding: 15px;
+	}
+
+	body.page-id-49 .affwp-tab-content h4 {
+		font-size: 1.1rem;
+	}
+
+	body.page-id-49 .affwp-table-responsive th,
+	body.page-id-49 .affwp-table-responsive td {
+		font-size: 0.85rem;
+		padding: 8px;
+	}
+
+	body.page-id-49 #affwp-graphs-date-options,
+	body.page-id-49 .affwp-datepicker,
+	body.page-id-49 #affwp-graphs-filter .button {
+		font-size: 0.9rem;
+	}
+
+	body.page-id-49 .affwp-datepicker {
+		width: 120px;
+	}
+
+	body.page-id-49 .affwp-search-date {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+/* My Account */
+/* Ensure all styles are scoped to page-id-10 */
+body.page-id-10 #page {
+	min-height: 100vh;
+	background: #f5f5f5;
+}
+
+body.page-id-10 #content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+body.page-id-10 #primary {
+	width: 100%;
+}
+
+body.page-id-10 #main {
+	width: 100%;
+}
+
+body.page-id-10 .entry-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+body.page-id-10 .entry-title {
+	font-size: 2rem;
+	color: #333;
+	font-weight: 700;
+}
+
+body.page-id-10 .entry-content {
+	padding: 20px;
+	max-width: 900px; /* Wider for navigation and content layout */
+	margin: 0 auto;
+}
+
+body.page-id-10 .entry-content > * {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+/* WooCommerce container */
+body.page-id-10 .woocommerce {
+	display: block;
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 25px;
+}
+
+/* Navigation styling */
+body.page-id-10 .woocommerce-MyAccount-navigation {
+	flex: 1 1 200px;
+}
+
+body.page-id-10 .woocommerce-MyAccount-navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+body.page-id-10 .woocommerce-MyAccount-navigation-link {
+	margin-bottom: 10px;
+}
+
+body.page-id-10 .woocommerce-MyAccount-navigation-link a {
+	display: block;
+	padding: 10px 15px;
+	color: #007bff;
+	text-decoration: none;
+	font-weight: 500;
+	border-radius: 4px;
+	transition:
+		background 0.3s ease,
+		color 0.3s ease;
+}
+
+body.page-id-10 .woocommerce-MyAccount-navigation-link.is-active a,
+body.page-id-10 .woocommerce-MyAccount-navigation-link a:hover {
+	background: #007bff;
+	color: #fff;
+}
+
+/* Content styling */
+body.page-id-10 .woocommerce-MyAccount-content {
+	flex: 3 1 400px;
+}
+
+body.page-id-10 .woocommerce-MyAccount-content p {
+	margin: 0 0 15px;
+	color: #555;
+	line-height: 1.6;
+}
+
+body.page-id-10 .woocommerce-MyAccount-content strong {
+	color: #333;
+	font-weight: 600;
+}
+
+body.page-id-10 .woocommerce-MyAccount-content a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+body.page-id-10 .woocommerce-MyAccount-content a:hover {
+	text-decoration: underline;
+}
+
+/* Footer styling */
+body.page-id-10 .entry-footer {
+	text-align: center;
+	margin-top: 20px;
+}
+
+body.page-id-10 .post-edit-link {
+	color: #007bff;
+	text-decoration: none;
+}
+
+body.page-id-10 .post-edit-link:hover {
+	text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	body.page-id-10 .woocommerce {
+		flex-direction: column;
+	}
+
+	body.page-id-10 .woocommerce-MyAccount-navigation {
+		margin-bottom: 20px;
+	}
+
+	body.page-id-10 .woocommerce-MyAccount-navigation-link a {
+		padding: 8px 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	body.page-id-10 #content {
+		padding: 10px;
+	}
+
+	body.page-id-10 .entry-content {
+		padding: 15px;
+	}
+
+	body.page-id-10 .entry-title {
+		font-size: 1.5rem;
+	}
+
+	body.page-id-10 .woocommerce {
+		padding: 15px;
+	}
+
+	body.page-id-10 .woocommerce-MyAccount-navigation-link a {
+		font-size: 0.9rem;
+	}
+
+	body.page-id-10 .woocommerce-MyAccount-content p {
+		font-size: 0.9rem;
+	}
+}
